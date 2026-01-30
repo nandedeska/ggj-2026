@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ogf28fjnty4v"]
 
 [ext_resource type="PackedScene" uid="uid://dwcyago5htpj6" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://cgqpg3bl07ghk" path="res://scenes/platform.tscn" id="2_yqjtg"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_80nbo"]
 

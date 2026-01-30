@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://5id3qecsdm1k"]
+[gd_scene load_steps=11 format=3 uid="uid://5id3qecsdm1k"]
 
 [ext_resource type="FontFile" uid="uid://cfx7rjsqpq0uo" path="res://fonts/connection_ii/ConnectionII.otf" id="1_54uv0"]
-[ext_resource type="Texture2D" uid="uid://cc2c1fm0vi3i1" path="res://textures/himiko yumeno.png" id="1_ph5s3"]
+[ext_resource type="Texture2D" uid="uid://cc2c1fm0vi3i1" path="res://graphics/himiko yumeno.png" id="1_ph5s3"]
+[ext_resource type="Script" uid="uid://x3p5xtk2v4jo" path="res://scripts/entry.gd" id="1_tly5r"]
 [ext_resource type="FontFile" path="res://fonts/connection_ii/ConnectionII.tres" id="2_tqk0k"]
+[ext_resource type="AudioStream" uid="uid://djkktpdmnpcly" path="res://audio/GravityCoil.mp3" id="5_s0hcq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jh4ay"]
 font = ExtResource("1_54uv0")
@@ -25,12 +27,24 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [1.569051]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("coil:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_tqk0k"]
 resource_name = "bounce in"
-length = 1.3
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -38,16 +52,28 @@ tracks/0/path = NodePath(".:skew")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.8, 0.99, 1.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.8, 0.99, 1.3, 2.9333334, 3.2333333, 3.6, 4, 4.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [1.569051, -0.5235988, 0.14660765, -0.06283186, 0.0]
+"values": [1.569051, -0.5235988, 0.14660765, -0.06283186, 0.0, 0.0, -0.06283186, 0.14660765, -0.5235988, 1.569051]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("coil:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tly5r"]
 _data = {
 &"RESET": SubResource("Animation_54uv0"),
-&"bounce in": SubResource("Animation_tqk0k")
+&"bounceIn": SubResource("Animation_tqk0k")
 }
 
 [node name="Disclaimer" type="Control"]
@@ -70,6 +96,8 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Node2D" type="Node2D" parent="."]
+skew = 1.569051
+script = ExtResource("1_tly5r")
 
 [node name="text" type="Label" parent="Node2D"]
 anchors_preset = 15
@@ -112,3 +140,9 @@ texture = ExtResource("1_ph5s3")
 libraries = {
 &"": SubResource("AnimationLibrary_tly5r")
 }
+
+[node name="coil" type="AudioStreamPlayer" parent="Node2D"]
+stream = ExtResource("5_s0hcq")
+
+[node name="Timer" type="Timer" parent="Node2D"]
+autostart = true
