@@ -11,9 +11,16 @@ config_version=5
 [application]
 
 config/name="ggj2026"
-run/main_scene="uid://by81ywck42ljo"
+run/main_scene="uid://5id3qecsdm1k"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://textures/icon.svg"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/resizable=false
+window/stretch/mode="canvas_items"
 
 [rendering]
 

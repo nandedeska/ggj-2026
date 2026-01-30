@@ -1,10 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://by81ywck42ljo"]
+[gd_scene load_steps=2 format=3 uid="uid://by81ywck42ljo"]
 
-[ext_resource type="Texture2D" uid="uid://dk604sliqkt3h" path="res://textures/placeholder title.png" id="1_7nrmo"]
-[ext_resource type="Texture2D" uid="uid://cc2c1fm0vi3i1" path="res://textures/himiko yumeno.png" id="2_clbkb"]
-[ext_resource type="Texture2D" uid="uid://dew1pu6x2ri7" path="res://textures/placeholder play.png" id="3_ldpc3"]
-[ext_resource type="Script" uid="uid://byjlp5otntc82" path="res://scripts/play.gd" id="4_7nrmo"]
-[ext_resource type="Texture2D" uid="uid://bonq8w7hn2yot" path="res://textures/placeholder credits.png" id="5_dj72i"]
+[ext_resource type="Texture2D" uid="uid://dk604sliqkt3h" path="res://graphics/placeholder title.png" id="1_7nrmo"]
 
 [node name="mainMenu" type="Node2D"]
 
@@ -20,23 +16,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="title" type="Sprite2D" parent="."]
-position = Vector2(583, 145)
-scale = Vector2(0.5474517, 0.46600002)
+position = Vector2(654.75, 192.25)
+scale = Vector2(0.67355007, 0.655)
 texture = ExtResource("1_7nrmo")
-
-[node name="bg test" type="Sprite2D" parent="title"]
-position = Vector2(367.15564, -261.80255)
-scale = Vector2(1.8266453, 2.1459227)
-texture = ExtResource("2_clbkb")
-centered = false
-
-[node name="play" type="Sprite2D" parent="."]
-position = Vector2(421.25, 396.75)
-scale = Vector2(0.59900004, 0.417)
-texture = ExtResource("3_ldpc3")
-script = ExtResource("4_7nrmo")
-
-[node name="credits" type="Sprite2D" parent="."]
-position = Vector2(771.5, 473)
-scale = Vector2(0.566, 0.33200005)
-texture = ExtResource("5_dj72i")
