@@ -1,11 +1,20 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
+# Fades screen out and plays constant menu movement
 func _ready() -> void:
-	pass # Replace with function body.
+	$fade/fadeController.connect("animation_finished",fadeFinish)
+	$fade/fadeController.play("fadeOut")
+	$menuAnims.play("menuMovement")
 
+# Once fade is finished, initialize buttons
+func fadeFinish(animName:StringName)->void:
+	$fade.visible = false
+	$playButton.connect("pressed",playCutscene)
+	$creditsButton.connect("pressed",creditsScreen)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func playCutscene()->void:
+	var scene:PackedScene = load("res://scenes/openingCutscene.tscn")
+	get_tree().change_scene_to_packed(scene)
+
+func creditsScreen()->void:
+	print('hey')
