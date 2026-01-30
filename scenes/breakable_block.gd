@@ -6,7 +6,7 @@ func _ready():
 	set_process(false)
 	
 func _process(_delta):
-	time += 0.25dddddw
+	time += 0.25
 	$Sprite2D.position += Vector2(0, sin(time) * 0.32 )
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
