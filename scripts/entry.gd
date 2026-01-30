@@ -4,7 +4,6 @@ const menu:PackedScene = preload("res://scenes/mainMenu.tscn")
 
 # Starts up the timer
 func _ready() -> void:
-	print("test")
 	$Timer.connect("timeout",startScreen)
 	$AnimationPlayer.connect("animation_finished",finishedAnim)
 
