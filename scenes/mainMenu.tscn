@@ -1,13 +1,93 @@
-[gd_scene load_steps=2 format=3 uid="uid://by81ywck42ljo"]
+[gd_scene load_steps=7 format=3 uid="uid://by81ywck42ljo"]
 
+[ext_resource type="Script" uid="uid://v34aopi4fc3v" path="res://scripts/mainMenuHandler.gd" id="1_3d1i7"]
 [ext_resource type="Texture2D" uid="uid://dk604sliqkt3h" path="res://graphics/placeholder title.png" id="1_7nrmo"]
 
-[node name="mainMenu" type="Node2D"]
+[sub_resource type="Animation" id="Animation_48ign"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fade/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("title:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(645.75, 192.25)]
+}
 
-[node name="interactibles" type="CanvasLayer" parent="."]
+[sub_resource type="Animation" id="Animation_l7wge"]
+resource_name = "fadeIn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fade/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3d1i7"]
+resource_name = "loopingTheRooms"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("title:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(643, 245), Vector2(639, 214)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7nrmo"]
+_data = {
+&"RESET": SubResource("Animation_48ign"),
+&"fadeIn": SubResource("Animation_l7wge"),
+&"loopingTheRooms": SubResource("Animation_3d1i7")
+}
+
+[node name="mainMenu" type="Node2D"]
+script = ExtResource("1_3d1i7")
+
+[node name="baseBg" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="ColorRect" type="ColorRect" parent="interactibles"]
+[node name="ColorRect" type="ColorRect" parent="baseBg"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2592937, 0.2592937, 0.2592937, 1)
+
+[node name="fade" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="fade"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -16,6 +96,26 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="title" type="Sprite2D" parent="."]
-position = Vector2(654.75, 192.25)
-scale = Vector2(0.67355007, 0.655)
+position = Vector2(645.75, 192.25)
+scale = Vector2(0.65773284, 0.655)
 texture = ExtResource("1_7nrmo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7nrmo")
+}
+
+[node name="playButton" type="Button" parent="."]
+offset_left = 490.0
+offset_top = 418.0
+offset_right = 730.5
+offset_bottom = 490.5
+text = "Play"
+
+[node name="creditsButton" type="Button" parent="."]
+offset_left = 489.0
+offset_top = 511.0
+offset_right = 729.5
+offset_bottom = 583.5
+text = "Credits
+"
