@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ogf28fjnty4v"]
+[gd_scene load_steps=5 format=3 uid="uid://ogf28fjnty4v"]
 
 [ext_resource type="PackedScene" uid="uid://dwcyago5htpj6" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://bg2xj8ql16rcl" path="res://scenes/platform.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://cd4e0u552mlvc" path="res://scenes/box.tscn" id="3_lnu2h"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_80nbo"]
 
@@ -14,6 +15,7 @@ position = Vector2(0, 8)
 zoom = Vector2(2.275, 2.275)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1, 29)
@@ -31,3 +33,6 @@ scale = Vector2(4.942631, 1.6087464)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("2_yqjtg")]
 position = Vector2(19, 19)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(-44, 28)

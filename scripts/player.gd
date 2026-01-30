@@ -6,17 +6,17 @@ const ACCELERATION = 22
 const FRICTION = 20
 
 var floor_contact_cayote: float = 0.0
-const FLOOR_CONTACT_CAYOTE_TIME: float = 0.05
+const FLOOR_CONTACT_CAYOTE_TIME: float = 0.1
 
 const GRAVITY_NORMAL: float = 14
 const GRAVITY_WALL: float = 12
 const WALL_JUMP_PUSH_FORCE: float = 300.0
  
 var wall_contact_cayote: float = 0.0
-const WALL_CONTACT_CAYOTE_TIME: float = 0.05
+const WALL_CONTACT_CAYOTE_TIME: float = 0.1
 
 var wall_jump_lock: float = 0.0
-const WALL_JUMP_LOCK_TIME: float = 0.1
+const WALL_JUMP_LOCK_TIME: float = 0.275
 
 var look_dir_x: int =  1
 
@@ -54,3 +54,13 @@ func _physics_process(delta: float) -> void:
 		floor_contact_cayote = FLOOR_CONTACT_CAYOTE_TIME
 	
 	move_and_slide()
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Rigidbody"):
+		body.collision_layer = 1
+		body.collision_mask = 1
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.is_in_group("Rigidbody"):
+		body.collision_layer = 2
+		body.collision_mask = 2
