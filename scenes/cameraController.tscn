@@ -3,21 +3,22 @@
 [ext_resource type="Script" uid="uid://cm7xjmvpl71y1" path="res://scripts/cameraPathFollow.gd" id="2_71pmx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_71pmx"]
-size = Vector2(80, 720)
+size = Vector2(20, 720)
 
 [sub_resource type="Curve2D" id="Curve2D_2jofb"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1280, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -315)
 }
 point_count = 2
 
 [node name="Controller" type="Node2D"]
 
 [node name="Right" type="Area2D" parent="."]
+rotation = -1.5707964
 collision_mask = 2
 
 [node name="TriggerRight" type="CollisionShape2D" parent="Right"]
-position = Vector2(280, 0)
+position = Vector2(176.99998, 8.523715e-07)
 scale = Vector2(0.44, 0.44)
 shape = SubResource("RectangleShape2D_71pmx")
 
@@ -26,6 +27,7 @@ scale = Vector2(0.44140625, 1)
 curve = SubResource("Curve2D_2jofb")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+rotation = -1.5707964
 script = ExtResource("2_71pmx")
 
 [node name="Camera2D" type="Camera2D" parent="Path2D/PathFollow2D"]
