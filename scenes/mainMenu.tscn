@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://by81ywck42ljo"]
+[gd_scene load_steps=2 format=3 uid="uid://by81ywck42ljo"]
+
+[ext_resource type="Texture2D" uid="uid://dmeff3kxv6fcc" path="res://graphics/black screen sprite.png" id="1_qkhwq"]
 
 [node name="mainMenu" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qkhwq")
+centered = false
