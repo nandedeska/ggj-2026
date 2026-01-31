@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://be2kheqwscbe7"]
+
+[ext_resource type="PackedScene" uid="uid://bg2xj8ql16rcl" path="res://scenes/platform.tscn" id="1_18u1n"]
+[ext_resource type="PackedScene" uid="uid://dwcyago5htpj6" path="res://scenes/player.tscn" id="2_1nicl"]
+[ext_resource type="PackedScene" uid="uid://bi0wsldo5wjfe" path="res://scenes/ghostBlock.tscn" id="3_1nicl"]
+[ext_resource type="PackedScene" uid="uid://j44k7oh6sffr" path="res://scenes/un_ghost block.tscn" id="4_5uefb"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("1_18u1n")]
+position = Vector2(-506, 185)
+scale = Vector2(5, 5)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("1_18u1n")]
+position = Vector2(297, -152)
+rotation = 1.5707964
+scale = Vector2(5, 5)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_1nicl")]
+position = Vector2(-247, -191)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.275, 2.275)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("4_5uefb")]
+position = Vector2(-108, 106)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("4_5uefb")]
+position = Vector2(43, 73)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("4_5uefb")]
+position = Vector2(161, 50)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("4_5uefb")]
+position = Vector2(109, -19)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("4_5uefb")]
+position = Vector2(52, -56)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("3_1nicl")]
+position = Vector2(-29, 152)

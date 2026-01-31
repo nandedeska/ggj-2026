@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi0wsldo5wjfe"]
+
+[ext_resource type="Script" uid="uid://r5wa1sj6kpr1" path="res://scripts/ghost_block.gd" id="1_b3abl"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://graphics/icon.svg" id="2_udy4n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udy4n"]
+size = Vector2(79, 20)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_b3abl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(30.000004, -1.9073486e-06)
+scale = Vector2(0.625, 0.15625001)
+texture = ExtResource("2_udy4n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(30, 0)
+shape = SubResource("RectangleShape2D_udy4n")
