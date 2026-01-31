@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://be2kheqwscbe7"]
+[gd_scene load_steps=7 format=3 uid="uid://be2kheqwscbe7"]
 
 [ext_resource type="PackedScene" uid="uid://bg2xj8ql16rcl" path="res://scenes/platform.tscn" id="1_18u1n"]
 [ext_resource type="PackedScene" uid="uid://dwcyago5htpj6" path="res://scenes/player.tscn" id="2_1nicl"]
 [ext_resource type="PackedScene" uid="uid://bi0wsldo5wjfe" path="res://scenes/ghostBlock.tscn" id="3_1nicl"]
 [ext_resource type="PackedScene" uid="uid://j44k7oh6sffr" path="res://scenes/un_ghost block.tscn" id="4_5uefb"]
 [ext_resource type="PackedScene" uid="uid://s2yr7eg288ip" path="res://scenes/cameraController.tscn" id="5_5uefb"]
+[ext_resource type="PackedScene" uid="uid://cms0c2bepwlcw" path="res://scenes/kill_zone.tscn" id="6_m5ccw"]
 
 [node name="ONE" type="Node2D"]
 
@@ -51,3 +52,6 @@ position = Vector2(-29, 152)
 position = Vector2(1, -105)
 
 [node name="Controller" parent="." instance=ExtResource("5_5uefb")]
+
+[node name="killZone" parent="." instance=ExtResource("6_m5ccw")]
+position = Vector2(-2, 255)
