@@ -1,92 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://by81ywck42ljo"]
+[gd_scene load_steps=2 format=3 uid="uid://by81ywck42ljo"]
 
-<<<<<<< HEAD
-[ext_resource type="Script" uid="uid://v34aopi4fc3v" path="res://scripts/mainMenuHandler.gd" id="1_3d1i7"]
-[ext_resource type="Texture2D" uid="uid://dk604sliqkt3h" path="res://graphics/placeholder title.png" id="1_7nrmo"]
-
-[sub_resource type="Animation" id="Animation_3d1i7"]
-resource_name = "fadeOut"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("fade/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_48ign"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("fade/ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.003921569, 0, 0, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_l7wge"]
-_data = {
-&"RESET": SubResource("Animation_48ign"),
-&"fadeOut": SubResource("Animation_3d1i7")
-}
-
-[sub_resource type="Animation" id="Animation_l7wge"]
-resource_name = "menuMovement"
-length = 4.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("title:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(643, 271), Vector2(640, 226.115), Vector2(643, 271)]
-}
-
-[sub_resource type="Animation" id="Animation_7nrmo"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("title:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(643, 271)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_clbkb"]
-_data = {
-&"RESET": SubResource("Animation_7nrmo"),
-&"menuMovement": SubResource("Animation_l7wge")
-}
-
-[node name="mainMenu" type="Node2D"]
-script = ExtResource("1_3d1i7")
-
-[node name="baseBg" type="CanvasLayer" parent="."]
-layer = -1
-
-[node name="ColorRect" type="ColorRect" parent="baseBg"]
-=======
 [ext_resource type="Texture2D" uid="uid://dk604sliqkt3h" path="res://textures/placeholder title.png" id="1_7nrmo"]
 
 [node name="mainMenu" type="Node2D"]
@@ -95,64 +8,14 @@ layer = -1
 layer = -1
 
 [node name="ColorRect" type="ColorRect" parent="interactibles"]
->>>>>>> 1b502381d1dc762ae4035f2a4681c5a25064535f
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-<<<<<<< HEAD
-color = Color(0.2592937, 0.2592937, 0.2592937, 1)
-
-[node name="fade" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="fade"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.003921569, 0, 0, 1)
-
-[node name="fadeController" type="AnimationPlayer" parent="fade"]
-root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_l7wge")
-}
-
-[node name="title" type="Sprite2D" parent="."]
-position = Vector2(643, 271)
-scale = Vector2(0.65773284, 0.655)
-texture = ExtResource("1_7nrmo")
-
-[node name="menuAnims" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_clbkb")
-}
-
-[node name="creditsButton" type="Button" parent="."]
-z_index = 1
-z_as_relative = false
-offset_left = 486.0
-offset_top = 538.0
-offset_right = 726.5
-offset_bottom = 610.5
-text = "Credits
-"
-
-[node name="playButton" type="Button" parent="."]
-z_index = 1
-z_as_relative = false
-offset_left = 487.0
-offset_top = 445.0
-offset_right = 727.5
-offset_bottom = 517.5
-text = "Play"
-=======
 color = Color(0, 0, 0, 1)
 
 [node name="title" type="Sprite2D" parent="."]
 position = Vector2(609, 154.00003)
 scale = Vector2(0.69727594, 0.71100014)
 texture = ExtResource("1_7nrmo")
->>>>>>> 1b502381d1dc762ae4035f2a4681c5a25064535f
