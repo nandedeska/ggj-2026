@@ -1,93 +1,97 @@
-[gd_scene load_steps=15 format=3 uid="uid://qtfmhqdbp7sw"]
+[gd_scene load_steps=16 format=3 uid="uid://qtfmhqdbp7sw"]
 
 [ext_resource type="Script" uid="uid://c64hcd1lq548x" path="res://scripts/opening_cutscene.gd" id="1_7dga4"]
-[ext_resource type="Texture2D" uid="uid://bpvgo2isnjicl" path="res://graphics/cutscene test.png" id="2_h6q2c"]
-[ext_resource type="Texture2D" uid="uid://b1lbqdygxlxri" path="res://graphics/cutscene1.png" id="3_0qxfn"]
-[ext_resource type="Texture2D" uid="uid://d201yhetmbcer" path="res://graphics/cutscene2.jpg" id="4_h6q2c"]
-[ext_resource type="Texture2D" uid="uid://cd5dldppdnn3k" path="res://graphics/cutscene3.png" id="5_0qxfn"]
+[ext_resource type="Texture2D" uid="uid://dmeff3kxv6fcc" path="res://graphics/black screen sprite.png" id="2_laqcq"]
+[ext_resource type="Texture2D" uid="uid://chwyus8tscxm7" path="res://graphics/cutscene1.png" id="3_0qxfn"]
+[ext_resource type="Texture2D" uid="uid://dvyia4ubjw5c1" path="res://graphics/story alt.png" id="3_cnmfp"]
+[ext_resource type="Texture2D" uid="uid://byd5jsglbwo4c" path="res://graphics/cutscene2.png" id="5_qhdd1"]
+[ext_resource type="Texture2D" uid="uid://ruegtsqi5iha" path="res://graphics/cutscene 3.png" id="6_pp6l6"]
 
-[sub_resource type="Animation" id="Animation_h6q2c"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_0qxfn"]
+[sub_resource type="Animation" id="Animation_6yuqj"]
 resource_name = "fadeIn"
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_7dga4"]
-resource_name = "fadeOut"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_laqcq"]
-_data = {
-&"RESET": SubResource("Animation_h6q2c"),
-&"fadeIn": SubResource("Animation_0qxfn"),
-&"fadeOut": SubResource("Animation_7dga4")
-}
-
-[sub_resource type="Animation" id="Animation_qhdd1"]
+[sub_resource type="Animation" id="Animation_5xjv2"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("cutscene1:position")
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(64, 59.999985)]
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_laqcq"]
+resource_name = "fadeOut"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yd4ds"]
+_data = {
+&"RESET": SubResource("Animation_5xjv2"),
+&"fadeIn": SubResource("Animation_6yuqj"),
+&"fadeOut": SubResource("Animation_laqcq")
+}
+
+[sub_resource type="Animation" id="Animation_cnmfp"]
+resource_name = "cutscene1"
+length = 7.12
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cutscene1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 3.5333333, 4.0666666, 6.8966665),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(935, 442), Vector2(938, 325), Vector2(938, 325), Vector2(318, 494), Vector2(-67.999985, 48)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("cutscene2:position")
+tracks/1/path = NodePath("Cutscene1:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 3, 3.5333333, 4.0666666, 6.8966665),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(66, 70)]
+"values": [Vector2(1.1, 1.1), Vector2(1.1, 1.1), Vector2(1.1, 1.1), Vector2(2, 2), Vector2(1.77, 1.77)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("cutscene1:visible")
+tracks/2/path = NodePath("Cutscene2:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -99,7 +103,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("cutscene2:visible")
+tracks/3/path = NodePath("Cutscene1:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -111,151 +115,182 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("cutscene3:visible")
+tracks/4/path = NodePath("Cutscene3:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_qhdd1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cutscene1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(935, 442)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cutscene1:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.1, 1.1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cutscene2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cutscene1:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
 "values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cutscene3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("cutscene3:position")
+tracks/5/path = NodePath("Cutscene2:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-69, 60)]
+"values": [Vector2(1104, 351)]
 }
-
-[sub_resource type="Animation" id="Animation_cnmfp"]
-resource_name = "cutscene1"
-length = 6.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("cutscene1:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 6),
-"transitions": PackedFloat32Array(1, 1),
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Cutscene2:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(64, 59.999985), Vector2(66, -208.00002)]
+"values": [Vector2(1.4, 1.4)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("cutscene3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Cutscene2:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("cutscene1:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("cutscene2:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_laqcq"]
-resource_name = "cutscene2"
-length = 6.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("cutscene2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 6),
-"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(66, 70), Vector2(78, -295.00003)]
+"values": [0.0]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("cutscene1:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Cutscene3:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(1416, 763)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("cutscene2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Cutscene3:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Cutscene3:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
 }
 
 [sub_resource type="Animation" id="Animation_pp6l6"]
-resource_name = "cutscene3"
-length = 6.0
+resource_name = "cutscene2"
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("cutscene3:visible")
+tracks/0/path = NodePath("Cutscene1:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("cutscene2:visible")
+tracks/1/path = NodePath("Cutscene2:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("cutscene1:visible")
+tracks/2/path = NodePath("Cutscene3:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -267,76 +302,167 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("cutscene3:position")
+tracks/3/path = NodePath("Cutscene2:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.33333334, 0.43333334, 1.32, 1.43, 1.7, 1.85, 1.99, 4.98),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1104, 351), Vector2(1104, 351), Vector2(1017.0001, 351), Vector2(1139.0001, 323), Vector2(1139.0001, 323), Vector2(56, 1138), Vector2(56, 1138), Vector2(1144, 178), Vector2(428, 414), Vector2(456, 341)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cutscene2:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.32, 1.43, 1.7, 1.85, 1.99, 4.98),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1.4, 1.4), Vector2(1.4, 1.4), Vector2(3, 3), Vector2(3, 3), Vector2(2, 2), Vector2(1, 1), Vector2(0.97, 0.97)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Cutscene2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.43, 1.7, 1.85, 1.99, 4.98),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 3.1415927, 6.2831855, 6.2831855]
+}
+
+[sub_resource type="Animation" id="Animation_yd4ds"]
+resource_name = "cutscene3"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cutscene1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cutscene2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cutscene3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cutscene3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.11, 0.41, 0.98, 1.9341319, 2.8, 4.133333, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1416, 763), Vector2(1286, 673), Vector2(1279, 753), Vector2(1274, 670), Vector2(1274, 670), Vector2(1166, 111), Vector2(1166, 111), Vector2(302, 430)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cutscene3:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0, 6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-69, 60), Vector2(-80, -317)]
+"values": [0.0, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Cutscene3:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.9341319, 2.8, 4.133333, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(2, 2), Vector2(1.5, 1.5), Vector2(1.5, 1.5), Vector2(1.2, 1.2)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pp6l6"]
 _data = {
 &"RESET": SubResource("Animation_qhdd1"),
 &"cutscene1": SubResource("Animation_cnmfp"),
-&"cutscene2": SubResource("Animation_laqcq"),
-&"cutscene3": SubResource("Animation_pp6l6")
+&"cutscene2": SubResource("Animation_pp6l6"),
+&"cutscene3": SubResource("Animation_yd4ds")
 }
 
 [node name="openingCutscene" type="Node2D"]
 script = ExtResource("1_7dga4")
 
-[node name="fade" type="CanvasLayer" parent="."]
+[node name="fadeItem" type="Sprite2D" parent="."]
+z_index = 2
+z_as_relative = false
+texture = ExtResource("2_laqcq")
+centered = false
 
-[node name="ColorRect" type="ColorRect" parent="fade"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="fadeAnims" type="AnimationPlayer" parent="fade"]
+[node name="fadePlayer" type="AnimationPlayer" parent="fadeItem"]
 libraries = {
-&"": SubResource("AnimationLibrary_laqcq")
+&"": SubResource("AnimationLibrary_yd4ds")
 }
 
-[node name="overlay" type="Sprite2D" parent="."]
+[node name="border" type="Sprite2D" parent="."]
 z_index = 1
 z_as_relative = false
-texture = ExtResource("2_h6q2c")
+texture = ExtResource("3_cnmfp")
 centered = false
-
-[node name="cutscene1" type="Sprite2D" parent="."]
-visible = false
-z_as_relative = false
-position = Vector2(64, 59.999985)
-scale = Vector2(2.3887734, 2.1082475)
-texture = ExtResource("3_0qxfn")
-centered = false
-
-[node name="cutscene2" type="Sprite2D" parent="."]
-z_as_relative = false
-position = Vector2(66, 70)
-scale = Vector2(5.1911116, 4.6266665)
-texture = ExtResource("4_h6q2c")
-centered = false
-
-[node name="cutscene3" type="Sprite2D" parent="."]
-z_as_relative = false
-position = Vector2(-69, 60)
-scale = Vector2(2.367818, 1.8337058)
-texture = ExtResource("5_0qxfn")
-centered = false
-
-[node name="cutsceneAnimator" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_pp6l6")
-}
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
 autostart = true
+
+[node name="Cutscene1" type="Sprite2D" parent="."]
+position = Vector2(935, 442)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("3_0qxfn")
+
+[node name="Cutscene2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1104, 351)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("5_qhdd1")
+
+[node name="Cutscene3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1416, 763)
+scale = Vector2(2, 2)
+texture = ExtResource("6_pp6l6")
+
+[node name="cutscenePlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pp6l6")
+}
