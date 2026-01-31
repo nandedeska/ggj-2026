@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 [gd_scene format=3 uid="uid://bg4e7bm7orbuc"]
+=======
+[gd_scene load_steps=0 format=3 uid="uid://bg4e7bm7orbuc"]
+>>>>>>> 1b502381d1dc762ae4035f2a4681c5a25064535f
 
 [node name="Node2D" type="Node2D"]
