@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://j44k7oh6sffr" path="res://scenes/un_ghost block.tscn" id="4_5uefb"]
 [ext_resource type="PackedScene" uid="uid://s2yr7eg288ip" path="res://scenes/cameraController.tscn" id="5_5uefb"]
 
-[node name="Node2D" type="Node2D"]
+[node name="ONE" type="Node2D"]
 
 [node name="StaticBody2D" parent="." instance=ExtResource("1_18u1n")]
 position = Vector2(-349.00003, 177.00002)
