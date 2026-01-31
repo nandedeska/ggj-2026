@@ -1,13 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://be2kheqwscbe7"]
 
 [ext_resource type="PackedScene" uid="uid://bg2xj8ql16rcl" path="res://scenes/platform.tscn" id="1_18u1n"]
+[ext_resource type="Script" uid="uid://bliwe8wm4yxr6" path="res://scenes/level_one.gd" id="1_m5ccw"]
 [ext_resource type="PackedScene" uid="uid://dwcyago5htpj6" path="res://scenes/player.tscn" id="2_1nicl"]
 [ext_resource type="PackedScene" uid="uid://bi0wsldo5wjfe" path="res://scenes/ghostBlock.tscn" id="3_1nicl"]
 [ext_resource type="PackedScene" uid="uid://j44k7oh6sffr" path="res://scenes/un_ghost block.tscn" id="4_5uefb"]
 [ext_resource type="PackedScene" uid="uid://s2yr7eg288ip" path="res://scenes/cameraController.tscn" id="5_5uefb"]
-[ext_resource type="PackedScene" uid="uid://cms0c2bepwlcw" path="res://scenes/kill_zone.tscn" id="6_m5ccw"]
 
-[node name="ONE" type="Node2D"]
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_m5ccw")
 
 [node name="StaticBody2D" parent="." instance=ExtResource("1_18u1n")]
 position = Vector2(-349.00003, 177.00002)
@@ -19,20 +20,12 @@ rotation = 1.5707964
 scale = Vector2(5, 5)
 
 [node name="StaticBody2D11" parent="." instance=ExtResource("1_18u1n")]
-<<<<<<< Updated upstream
-position = Vector2(-332.99994, -1.000001)
-=======
 position = Vector2(-333.99994, 5.999998)
->>>>>>> Stashed changes
 rotation = 1.5707964
 scale = Vector2(5, 5)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_1nicl")]
-<<<<<<< Updated upstream
-position = Vector2(-254, -180)
-=======
 position = Vector2(-234, -174)
->>>>>>> Stashed changes
 scale = Vector2(1, 0.99270076)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("4_5uefb")]
@@ -60,6 +53,3 @@ position = Vector2(-29, 152)
 position = Vector2(1, -105)
 
 [node name="Controller" parent="." instance=ExtResource("5_5uefb")]
-
-[node name="killZone" parent="." instance=ExtResource("6_m5ccw")]
-position = Vector2(4, 196)
