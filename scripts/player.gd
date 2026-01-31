@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal on_mask_wear(is_wearing_mask: bool)
+
 const SPEED = 125
 const JUMP_VELOCITY = -300
 const ACCELERATION = 22
@@ -22,6 +24,16 @@ var look_dir_x: int =  1
 
 @onready var animation: AnimatedSprite2D = $Animation
 
+var is_wearing_mask := false
+
+
+func _ready() -> void:
+	Global.player = self
+
+func _input(event) -> void:
+	if event.is_action_pressed("mask"):
+		is_wearing_mask = !is_wearing_mask
+		on_mask_wear.emit(is_wearing_mask)
 
 func _physics_process(delta: float) -> void:
 	var x_input: float = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
