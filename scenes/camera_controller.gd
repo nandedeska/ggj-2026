@@ -5,6 +5,8 @@ var nextLevel
 var x:float = 0
 
 func _ready() -> void:
+	
+	
 	currentLevel = get_tree().get_current_scene().get_name()
 	match currentLevel:
 		"ONE":
