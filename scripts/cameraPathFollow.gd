@@ -1,5 +1,6 @@
 extends PathFollow2D
 
+
 @export var panSpeed: float = 0.01
 var movementDone: bool = false
 
