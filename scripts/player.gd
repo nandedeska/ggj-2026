@@ -24,16 +24,21 @@ var look_dir_x: int =  1
 
 @onready var animation: AnimatedSprite2D = $Animation
 
-var is_wearing_mask := false
+var has_mask := false
+var is_wearing_mask :
+	set(value):
+		is_wearing_mask = value
+		on_mask_wear.emit(is_wearing_mask)
+	get:
+		return is_wearing_mask
 
 
 func _ready() -> void:
 	Global.player = self
 
 func _input(event) -> void:
-	if event.is_action_pressed("mask"):
+	if event.is_action_pressed("mask") and has_mask:
 		is_wearing_mask = !is_wearing_mask
-		on_mask_wear.emit(is_wearing_mask)
 
 func _physics_process(delta: float) -> void:
 	var x_input: float = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
