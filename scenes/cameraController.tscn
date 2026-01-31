@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://s2yr7eg288ip"]
+[gd_scene load_steps=5 format=3 uid="uid://s2yr7eg288ip"]
 
+[ext_resource type="Script" uid="uid://btmqekrci4r1u" path="res://scenes/camera_controller.gd" id="1_tjo62"]
 [ext_resource type="Script" uid="uid://cm7xjmvpl71y1" path="res://scripts/cameraPathFollow.gd" id="2_71pmx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_71pmx"]
@@ -12,6 +13,7 @@ _data = {
 point_count = 2
 
 [node name="Controller" type="Node2D"]
+script = ExtResource("1_tjo62")
 
 [node name="Right" type="Area2D" parent="."]
 rotation = -1.5707964
@@ -19,6 +21,18 @@ collision_mask = 2
 
 [node name="TriggerRight" type="CollisionShape2D" parent="Right"]
 position = Vector2(176.99998, 8.523715e-07)
+scale = Vector2(0.44, 0.44)
+shape = SubResource("RectangleShape2D_71pmx")
+
+[node name="TriggerRight2" type="CollisionShape2D" parent="Right"]
+position = Vector2(0, -290)
+rotation = 1.5707964
+scale = Vector2(0.44, 0.44)
+shape = SubResource("RectangleShape2D_71pmx")
+
+[node name="TriggerRight3" type="CollisionShape2D" parent="Right"]
+position = Vector2(0, 290)
+rotation = 1.5707964
 scale = Vector2(0.44, 0.44)
 shape = SubResource("RectangleShape2D_71pmx")
 
@@ -35,3 +49,4 @@ panSpeed = 0.02
 zoom = Vector2(2.275, 2.275)
 
 [connection signal="body_entered" from="Right" to="Path2D/PathFollow2D" method="_on_right_body_entered"]
+[connection signal="nextLevel" from="Path2D/PathFollow2D" to="." method="_on_path_follow_2d_next_level"]

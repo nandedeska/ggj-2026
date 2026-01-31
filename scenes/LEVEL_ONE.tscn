@@ -17,6 +17,11 @@ position = Vector2(325, -13)
 rotation = 1.5707964
 scale = Vector2(5, 5)
 
+[node name="StaticBody2D11" parent="." instance=ExtResource("1_18u1n")]
+position = Vector2(-331.99994, 5.999998)
+rotation = 1.5707964
+scale = Vector2(5, 5)
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_1nicl")]
 position = Vector2(162, -47.000015)
 scale = Vector2(1, 0.99270076)
