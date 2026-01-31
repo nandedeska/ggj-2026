@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc2c1fm0vi3i1"
-path="res://.godot/imported/himiko yumeno.png-707dc6336ef4486ae5f87b661ff80f05.ctex"
+uid="uid://brfk5b1f8gsx2"
+path="res://.godot/imported/white circle.png-301093b8fcd105b6bd770a6c12cfea2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/himiko yumeno.png"
-dest_files=["res://.godot/imported/himiko yumeno.png-707dc6336ef4486ae5f87b661ff80f05.ctex"]
+source_file="res://graphics/white circle.png"
+dest_files=["res://.godot/imported/white circle.png-301093b8fcd105b6bd770a6c12cfea2a.ctex"]
 
 [params]
 
