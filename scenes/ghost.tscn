@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://c8gnhi8qprqvo" path="res://scripts/ghost.gd" id="1_l5lq6"]
 [ext_resource type="Texture2D" uid="uid://clodkrwrwttxu" path="res://graphics/temp_ghost.png" id="1_t76o2"]
 
-[node name="Ghost" type="CharacterBody2D"]
+[node name="Ghost" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_l5lq6")
+sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.05, 0.05)
