@@ -1,3 +1,125 @@
-[gd_scene format=3 uid="uid://bm0u1yjjgtiqv"]
+[gd_scene load_steps=10 format=3 uid="uid://bo3epdo82hn42"]
 
-[node name="THREE" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://bg2xj8ql16rcl" path="res://scenes/platform.tscn" id="1_i7d8l"]
+[ext_resource type="PackedScene" uid="uid://dwcyago5htpj6" path="res://scenes/player.tscn" id="2_f6ieg"]
+[ext_resource type="PackedScene" uid="uid://j44k7oh6sffr" path="res://scenes/un_ghost block.tscn" id="3_i33jm"]
+[ext_resource type="PackedScene" uid="uid://bi0wsldo5wjfe" path="res://scenes/ghostBlock.tscn" id="4_cdqrl"]
+[ext_resource type="PackedScene" uid="uid://cms0c2bepwlcw" path="res://scenes/kill_zone.tscn" id="5_un6j1"]
+[ext_resource type="PackedScene" uid="uid://cd4e0u552mlvc" path="res://scenes/box.tscn" id="6_a46xb"]
+[ext_resource type="PackedScene" uid="uid://dlrcubyntpx74" path="res://scenes/topBreakableBlock.tscn" id="7_yfmwt"]
+[ext_resource type="PackedScene" uid="uid://dya6kv7tdgi4i" path="res://scenes/sideCameraController.tscn" id="8_00ybr"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gw0bb"]
+
+[node name="levelThree" type="Node2D"]
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("1_i7d8l")]
+position = Vector2(326, -336)
+rotation = 1.5707964
+scale = Vector2(5, 5)
+collision_layer = 3
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("1_i7d8l")]
+position = Vector2(-324.99994, -118.000046)
+rotation = 1.5707964
+scale = Vector2(5, 5)
+collision_layer = 3
+
+[node name="StaticBody2D15" parent="." instance=ExtResource("1_i7d8l")]
+position = Vector2(327, 139.00002)
+rotation = 1.5707964
+scale = Vector2(5, 6.0022807)
+collision_layer = 3
+
+[node name="StaticBody2D12" parent="." instance=ExtResource("1_i7d8l")]
+position = Vector2(-72, -1)
+rotation = 1.5707964
+scale = Vector2(1.5391872, -0.072907686)
+collision_layer = 3
+
+[node name="StaticBody2D17" parent="." instance=ExtResource("1_i7d8l")]
+position = Vector2(220, 59)
+rotation = 1.5707964
+scale = Vector2(0.92595536, -0.09907596)
+collision_layer = 3
+
+[node name="player" parent="." instance=ExtResource("2_f6ieg")]
+position = Vector2(-250, 158)
+scale = Vector2(1, 0.99270076)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("3_i33jm")]
+position = Vector2(-253, 290)
+scale = Vector2(1.5560143, 13.584098)
+collision_layer = 3
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("3_i33jm")]
+position = Vector2(-176, 137)
+scale = Vector2(0.7599988, 1)
+collision_layer = 3
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("3_i33jm")]
+position = Vector2(-198, -70)
+scale = Vector2(0.7599988, 1)
+collision_layer = 3
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("3_i33jm")]
+position = Vector2(31, 147)
+collision_layer = 3
+
+[node name="StaticBody2D19" parent="." instance=ExtResource("3_i33jm")]
+position = Vector2(211, 147)
+collision_layer = 3
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("4_cdqrl")]
+position = Vector2(-251.99997, 290)
+scale = Vector2(1.6283784, 13.584098)
+collision_layer = 3
+
+[node name="StaticBody2D10" parent="." instance=ExtResource("3_i33jm")]
+position = Vector2(-31, 184)
+scale = Vector2(2.3406403, 0.2021305)
+collision_layer = 3
+
+[node name="StaticBody2D14" parent="." instance=ExtResource("4_cdqrl")]
+position = Vector2(-30, 183)
+scale = Vector2(2.449508, 0.2021305)
+collision_layer = 3
+
+[node name="StaticBody2D13" parent="." instance=ExtResource("4_cdqrl")]
+position = Vector2(-117.999985, 104)
+scale = Vector2(0.7255801, 1.022438)
+collision_layer = 3
+
+[node name="StaticBody2D16" parent="." instance=ExtResource("4_cdqrl")]
+position = Vector2(-110.999985, -97)
+scale = Vector2(0.7255801, 1.022438)
+collision_layer = 3
+
+[node name="killZone" parent="." instance=ExtResource("5_un6j1")]
+position = Vector2(-23.999998, 183)
+scale = Vector2(0.99691594, 1.1519278)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="killZone"]
+position = Vector2(28.08662, -10.417322)
+shape = SubResource("WorldBoundaryShape2D_gw0bb")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("7_yfmwt")]
+position = Vector2(-168, 49.000004)
+scale = Vector2(1.3200005, 1.2533765)
+
+[node name="StaticBody2D11" parent="." instance=ExtResource("7_yfmwt")]
+position = Vector2(184, 113)
+scale = Vector2(1.3200005, 1.2533765)
+
+[node name="StaticBody2D22" parent="." instance=ExtResource("7_yfmwt")]
+position = Vector2(182, -18)
+scale = Vector2(1.3200005, 1.2533765)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("7_yfmwt")]
+position = Vector2(-230, 21.000004)
+scale = Vector2(1.3200005, 1.2533765)
+
+[node name="Controller" parent="." instance=ExtResource("8_00ybr")]
+
+[node name="RigidBody2D" parent="." instance=ExtResource("6_a46xb")]
+position = Vector2(34, 126)
