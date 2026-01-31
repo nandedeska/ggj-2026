@@ -1,33 +1,81 @@
-[gd_scene load_steps=4 format=3 uid="uid://ogf28fjnty4v"]
+[gd_scene load_steps=11 format=3 uid="uid://ogf28fjnty4v"]
 
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://dwcyago5htpj6" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="2_yqjtg"]
+=======
+[ext_resource type="Script" uid="uid://c3ubxpp10k6x6" path="res://scripts/player.gd" id="1_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://bvyst4o44ymrr" path="res://graphics/PlayerSprites.jpg" id="2_lnu2h"]
+>>>>>>> Stashed changes
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_80nbo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2o6t"]
+atlas = ExtResource("2_lnu2h")
+region = Rect2(356, 345, 149, 115)
 
-[node name="game" type="Node2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_feb5d"]
+atlas = ExtResource("2_lnu2h")
+region = Rect2(505, 345, 149, 115)
 
-[node name="player" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(0, 8)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc0e3"]
+atlas = ExtResource("2_lnu2h")
+region = Rect2(654, 345, 149, 115)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.275, 2.275)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jktm"]
+atlas = ExtResource("2_lnu2h")
+region = Rect2(803, 345, 149, 115)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryrav"]
+atlas = ExtResource("2_lnu2h")
+region = Rect2(952, 345, 149, 115)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1, 29)
-shape = SubResource("WorldBoundaryShape2D_80nbo")
+[sub_resource type="AtlasTexture" id="AtlasTexture_eow3j"]
+atlas = ExtResource("2_lnu2h")
+region = Rect2(1101, 345, 149, 115)
 
-[node name="StaticBody2D2" parent="." instance=ExtResource("2_yqjtg")]
-position = Vector2(-147, -45)
-rotation = -1.5775071
-scale = Vector2(1.1531198, -0.49228942)
+[sub_resource type="SpriteFrames" id="SpriteFrames_j5wjh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2o6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_feb5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fc0e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jktm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryrav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eow3j")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 11.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
-[node name="StaticBody2D4" parent="." instance=ExtResource("2_yqjtg")]
-position = Vector2(-254.00002, -11)
-rotation = -1.5775071
-scale = Vector2(4.942631, 1.6087464)
+[sub_resource type="CircleShape2D" id="CircleShape2D_80nbo"]
+radius = 6.0
 
-[node name="StaticBody2D3" parent="." instance=ExtResource("2_yqjtg")]
-position = Vector2(19, 19)
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_yqjtg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -21)
+scale = Vector2(0.17114094, 0.20434782)
+sprite_frames = SubResource("SpriteFrames_j5wjh")
+animation = &"Run"
+frame_progress = 0.3211644
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -17)
+shape = SubResource("CircleShape2D_80nbo")
