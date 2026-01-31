@@ -1,8 +1,8 @@
 extends Area2D
 
 @export var sprite: Sprite2D
-@export var oscillation_speed := 25
-@export var oscillation_power := 5
+@export var oscillation_speed := 7.7
+@export var oscillation_power := 1.5
 var time: float
 
 func _ready() -> void:

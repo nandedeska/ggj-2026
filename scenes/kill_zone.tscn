@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cms0c2bepwlcw"]
+[gd_scene load_steps=5 format=3 uid="uid://cms0c2bepwlcw"]
 
 [ext_resource type="Script" uid="uid://uypcywvd6rho" path="res://scripts/kill_zone.gd" id="1_kebdr"]
 
@@ -39,8 +39,6 @@ _data = {
 &"out": SubResource("Animation_kebdr")
 }
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kebdr"]
-
 [node name="killZone" type="Area2D"]
 collision_mask = 128
 script = ExtResource("1_kebdr")
@@ -60,9 +58,6 @@ color = Color(0, 0, 0, 1)
 libraries = {
 &"": SubResource("AnimationLibrary_l4ff3")
 }
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("WorldBoundaryShape2D_kebdr")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

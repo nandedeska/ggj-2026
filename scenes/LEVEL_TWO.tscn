@@ -85,11 +85,11 @@ scale = Vector2(0.7255801, 1.022438)
 collision_layer = 3
 
 [node name="killZone" parent="." instance=ExtResource("5_psf2f")]
-position = Vector2(-435, 36)
+position = Vector2(-19, 177)
 scale = Vector2(0.99691594, 1.1519278)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="killZone"]
-position = Vector2(406.2529, 119.79917)
+position = Vector2(24.07425, 26.043297)
 shape = SubResource("WorldBoundaryShape2D_cdsyk")
 
 [node name="RigidBody2D" parent="." instance=ExtResource("7_ikxgj")]

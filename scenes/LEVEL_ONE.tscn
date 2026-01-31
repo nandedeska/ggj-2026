@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://t6mkmfts5mkc"]
+[gd_scene load_steps=10 format=3 uid="uid://t6mkmfts5mkc"]
 
 [ext_resource type="PackedScene" uid="uid://bg2xj8ql16rcl" path="res://scenes/platform.tscn" id="1_18u1n"]
 [ext_resource type="PackedScene" uid="uid://dwcyago5htpj6" path="res://scenes/player.tscn" id="2_1nicl"]
@@ -6,8 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://cms0c2bepwlcw" path="res://scenes/kill_zone.tscn" id="3_m5ccw"]
 [ext_resource type="PackedScene" uid="uid://j44k7oh6sffr" path="res://scenes/un_ghost block.tscn" id="4_5uefb"]
 [ext_resource type="PackedScene" uid="uid://s2yr7eg288ip" path="res://scenes/topCameraController.tscn" id="5_5uefb"]
+[ext_resource type="PackedScene" uid="uid://260fgrxq5ugp" path="res://scenes/mask.tscn" id="7_t8vnw"]
+[ext_resource type="PackedScene" uid="uid://0k0stv1crgmg" path="res://scenes/ghost.tscn" id="8_yjjs3"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t8vnw"]
+distance = 109.58267
 
 [node name="Node2D" type="Node2D"]
 
@@ -50,11 +53,17 @@ position = Vector2(5, 153)
 scale = Vector2(1.8000008, 0.88)
 
 [node name="killZone" parent="." instance=ExtResource("3_m5ccw")]
-position = Vector2(-435, 36)
+position = Vector2(15, 198.99998)
 scale = Vector2(0.99691594, 1.1519278)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="killZone"]
-position = Vector2(406, 120)
+position = Vector2(-7.021637, 108.513756)
 shape = SubResource("WorldBoundaryShape2D_t8vnw")
 
 [node name="Controller" parent="." instance=ExtResource("5_5uefb")]
+
+[node name="Mask" parent="." instance=ExtResource("7_t8vnw")]
+position = Vector2(-20, -89)
+
+[node name="Ghost" parent="." instance=ExtResource("8_yjjs3")]
+position = Vector2(-371, 26)

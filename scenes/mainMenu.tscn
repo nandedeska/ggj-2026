@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://by81ywck42ljo"]
+[gd_scene format=3 uid="uid://by81ywck42ljo"]
 
-[ext_resource type="Script" uid="uid://v34aopi4fc3v" path="res://scripts/menuHandler.gd" id="1_l7wge"]
+[ext_resource type="Script" path="res://scripts/menuHandler.gd" id="1_clbkb"]
 [ext_resource type="Texture2D" uid="uid://dmeff3kxv6fcc" path="res://graphics/black screen sprite.png" id="1_qkhwq"]
 [ext_resource type="Shader" uid="uid://dl4ne0b5bheat" path="res://shaders/maskShader.gdshader" id="2_48ign"]
 [ext_resource type="Texture2D" uid="uid://brfk5b1f8gsx2" path="res://graphics/white circle.png" id="3_l7wge"]
@@ -47,21 +47,22 @@ _data = {
 &"openUp": SubResource("Animation_48ign")
 }
 
-[node name="mainMenu" type="Node2D"]
-script = ExtResource("1_l7wge")
+[node name="mainMenu" type="Node2D" unique_id=797129603]
+script = ExtResource("1_clbkb")
 
-[node name="mainTitle" type="Control" parent="."]
+[node name="mainTitle" type="Control" parent="." unique_id=1892327217]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
-[node name="tempTitle" type="Sprite2D" parent="mainTitle"]
+[node name="tempTitle" type="Sprite2D" parent="mainTitle" unique_id=1072358634]
 position = Vector2(657, 172.99998)
 scale = Vector2(0.629174, 0.61999995)
 texture = ExtResource("5_clbkb")
 
-[node name="play" type="Button" parent="mainTitle"]
+[node name="play" type="Button" parent="mainTitle" unique_id=249510001]
 layout_mode = 0
 offset_left = 462.0
 offset_top = 356.0
@@ -71,7 +72,7 @@ theme_override_fonts/font = ExtResource("6_ldpc3")
 theme_override_font_sizes/font_size = 28
 text = "Play"
 
-[node name="credits" type="Button" parent="mainTitle"]
+[node name="credits" type="Button" parent="mainTitle" unique_id=758232805]
 layout_mode = 0
 offset_left = 464.0
 offset_top = 434.0
@@ -82,22 +83,20 @@ theme_override_font_sizes/font_size = 28
 text = "Credits
 "
 
-[node name="mask" type="Sprite2D" parent="."]
+[node name="mask" type="Sprite2D" parent="." unique_id=425552363]
 z_index = 4096
 material = SubResource("ShaderMaterial_7nrmo")
 position = Vector2(640, 360)
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("3_l7wge")
 
-[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+[node name="BackBufferCopy" type="BackBufferCopy" parent="." unique_id=1033389322]
 copy_mode = 2
 
-[node name="blackBG" type="Sprite2D" parent="BackBufferCopy"]
+[node name="blackBG" type="Sprite2D" parent="BackBufferCopy" unique_id=1847586656]
 z_index = 100
 texture = ExtResource("1_qkhwq")
 centered = false
 
-[node name="maskTransition" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_7nrmo")
-}
+[node name="maskTransition" type="AnimationPlayer" parent="." unique_id=586217868]
+libraries/ = SubResource("AnimationLibrary_7nrmo")
