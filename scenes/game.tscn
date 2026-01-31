@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://dwcyago5htpj6" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://bg2xj8ql16rcl" path="res://scenes/platform.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://cd4e0u552mlvc" path="res://scenes/box.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://dk4ox56when87" path="res://scenes/breakableBlock.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://dk4ox56when87" path="res://scenes/sideBreakableBlock.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cms0c2bepwlcw" path="res://scenes/kill_zone.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://bi0wsldo5wjfe" path="res://scenes/ghostBlock.tscn" id="6_p57ef"]
-[ext_resource type="PackedScene" uid="uid://s2yr7eg288ip" path="res://scenes/cameraController.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://s2yr7eg288ip" path="res://scenes/topCameraController.tscn" id="7_u5sy4"]
 
 [node name="game" type="Node2D"]
 

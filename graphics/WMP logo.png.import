@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc2c1fm0vi3i1"
-path="res://.godot/imported/himiko yumeno.png-707dc6336ef4486ae5f87b661ff80f05.ctex"
+uid="uid://da2eyxxojdgxq"
+path="res://.godot/imported/WMP logo.png-8260d10513bfc5b5802f5457cec1e9f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/himiko yumeno.png"
-dest_files=["res://.godot/imported/himiko yumeno.png-707dc6336ef4486ae5f87b661ff80f05.ctex"]
+source_file="res://graphics/WMP logo.png"
+dest_files=["res://.godot/imported/WMP logo.png-8260d10513bfc5b5802f5457cec1e9f1.ctex"]
 
 [params]
 
