@@ -1,12 +1,61 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=2 format=3 uid="uid://cms0c2bepwlcw"]
 
 [ext_resource type="Script" uid="uid://uypcywvd6rho" path="res://scripts/kill_zone.gd" id="1_kebdr"]
 
+=======
+[gd_scene load_steps=6 format=3 uid="uid://cms0c2bepwlcw"]
+
+[ext_resource type="Script" uid="uid://uypcywvd6rho" path="res://scripts/kill_zone.gd" id="1_kebdr"]
+
+[sub_resource type="Animation" id="Animation_l4ff3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kebdr"]
+resource_name = "out"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l4ff3"]
+_data = {
+&"RESET": SubResource("Animation_l4ff3"),
+&"out": SubResource("Animation_kebdr")
+}
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kebdr"]
+
+>>>>>>> Stashed changes
 [node name="killZone" type="Area2D"]
 collision_mask = 128
 script = ExtResource("1_kebdr")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_kebdr")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

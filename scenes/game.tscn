@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ogf28fjnty4v"]
+[gd_scene load_steps=8 format=3 uid="uid://ogf28fjnty4v"]
 
 [ext_resource type="PackedScene" uid="uid://dwcyago5htpj6" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://bg2xj8ql16rcl" path="res://scenes/platform.tscn" id="2_yqjtg"]
@@ -7,8 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cms0c2bepwlcw" path="res://scenes/kill_zone.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://bi0wsldo5wjfe" path="res://scenes/ghostBlock.tscn" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://s2yr7eg288ip" path="res://scenes/cameraController.tscn" id="7_u5sy4"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_80nbo"]
 
 [node name="game" type="Node2D"]
 
@@ -42,10 +40,6 @@ position = Vector2(80, 7)
 [node name="killZone" parent="." instance=ExtResource("5_iywne")]
 position = Vector2(-405, -37)
 scale = Vector2(0.99691594, 1.1603979)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killZone"]
-position = Vector2(406, 120)
-shape = SubResource("WorldBoundaryShape2D_80nbo")
 
 [node name="StaticBody2D" parent="." instance=ExtResource("6_p57ef")]
 position = Vector2(-113, -9)

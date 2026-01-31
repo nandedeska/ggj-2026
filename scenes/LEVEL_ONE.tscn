@@ -20,9 +20,13 @@ scale = Vector2(5, 5)
 
 [node name="StaticBody2D11" parent="." instance=ExtResource("1_18u1n")]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 position = Vector2(-332.99994, -1.000001)
 =======
 position = Vector2(-333.99994, 5.999998)
+>>>>>>> Stashed changes
+=======
+position = Vector2(-331.99994, 10.999998)
 >>>>>>> Stashed changes
 rotation = 1.5707964
 scale = Vector2(5, 5)
@@ -62,4 +66,8 @@ position = Vector2(1, -105)
 [node name="Controller" parent="." instance=ExtResource("5_5uefb")]
 
 [node name="killZone" parent="." instance=ExtResource("6_m5ccw")]
+<<<<<<< Updated upstream
 position = Vector2(4, 196)
+=======
+position = Vector2(4, 260)
+>>>>>>> Stashed changes

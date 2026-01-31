@@ -1,8 +1,16 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=4 format=3 uid="uid://cmosqj05k3wyg"]
+=======
+[gd_scene load_steps=5 format=3 uid="uid://ddx7e3pqpqbpo"]
+>>>>>>> Stashed changes
 
 [ext_resource type="PackedScene" uid="uid://s2yr7eg288ip" path="res://scenes/cameraController.tscn" id="1_2dxt7"]
 [ext_resource type="PackedScene" uid="uid://dwcyago5htpj6" path="res://scenes/player.tscn" id="2_2oaih"]
 [ext_resource type="PackedScene" uid="uid://bg2xj8ql16rcl" path="res://scenes/platform.tscn" id="3_suah7"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="PackedScene" uid="uid://cms0c2bepwlcw" path="res://scenes/kill_zone.tscn" id="4_quamx"]
+>>>>>>> Stashed changes
 
 [node name="TWO" type="Node2D"]
 
@@ -13,3 +21,9 @@ position = Vector2(0, 139)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("3_suah7")]
 position = Vector2(4, 158)
+<<<<<<< Updated upstream
+=======
+
+[node name="killZone" parent="." instance=ExtResource("4_quamx")]
+position = Vector2(6, 210)
+>>>>>>> Stashed changes
