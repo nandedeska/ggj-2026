@@ -29,6 +29,7 @@ curve = SubResource("Curve2D_2jofb")
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 rotation = -1.5707964
 script = ExtResource("2_71pmx")
+panSpeed = 0.02
 
 [node name="Camera2D" type="Camera2D" parent="Path2D/PathFollow2D"]
 zoom = Vector2(2.275, 2.275)
