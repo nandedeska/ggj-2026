@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp7uk5d2lm1pe"]
+
+[ext_resource type="Script" uid="uid://bgqycng8141fp" path="res://scripts/mask.gd" id="1_oilhy"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://graphics/icon.svg" id="2_1rsgv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rv8xw"]
+radius = 16.0
+
+[node name="Mask" type="Area2D" node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_oilhy")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_1rsgv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rv8xw")
