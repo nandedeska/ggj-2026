@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://c847t7wh68jr5"]
+
+[ext_resource type="PackedScene" uid="uid://dwcyago5htpj6" path="res://scenes/player.tscn" id="1_6jqak"]
+[ext_resource type="PackedScene" uid="uid://bg2xj8ql16rcl" path="res://scenes/platform.tscn" id="2_smmcs"]
+[ext_resource type="PackedScene" uid="uid://cd4e0u552mlvc" path="res://scenes/box.tscn" id="3_6erlg"]
+[ext_resource type="PackedScene" uid="uid://dk4ox56when87" path="res://scenes/breakableBlock.tscn" id="4_5rirp"]
+[ext_resource type="PackedScene" uid="uid://cms0c2bepwlcw" path="res://scenes/kill_zone.tscn" id="5_ya4pc"]
+[ext_resource type="PackedScene" uid="uid://bi0wsldo5wjfe" path="res://scenes/ghostBlock.tscn" id="6_bahwk"]
+[ext_resource type="PackedScene" uid="uid://s2yr7eg288ip" path="res://scenes/cameraController.tscn" id="7_677oy"]
+[ext_resource type="PackedScene" uid="uid://0k0stv1crgmg" path="res://scenes/ghost.tscn" id="8_smmcs"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_80nbo"]
+
+[node name="game" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_6jqak")]
+position = Vector2(0, 8)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.275, 2.275)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_smmcs")]
+position = Vector2(-147, -45)
+rotation = -1.5775071
+scale = Vector2(1.1531198, -0.49228942)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_smmcs")]
+position = Vector2(-254.00002, -11)
+rotation = -1.5775071
+scale = Vector2(4.942631, 1.6087464)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_smmcs")]
+position = Vector2(55.000004, 30)
+scale = Vector2(-4.1411195, 0.29577398)
+collision_layer = 3
+
+[node name="RigidBody2D" parent="." instance=ExtResource("3_6erlg")]
+position = Vector2(-42, 2)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("4_5rirp")]
+position = Vector2(80, 7)
+
+[node name="killZone" parent="." instance=ExtResource("5_ya4pc")]
+position = Vector2(-405, -37)
+scale = Vector2(0.99691594, 1.1603979)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killZone"]
+position = Vector2(406, 120)
+shape = SubResource("WorldBoundaryShape2D_80nbo")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("6_bahwk")]
+position = Vector2(-113, -9)
+
+[node name="Controller" parent="." instance=ExtResource("7_677oy")]
+
+[node name="Ghost" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_smmcs")]
+position = Vector2(336, -7)
+speed = 60
+player = NodePath("../player")
