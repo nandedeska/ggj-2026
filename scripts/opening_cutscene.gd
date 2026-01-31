@@ -23,7 +23,7 @@ func fadeFinish(animName:StringName)->void:
 			$fade/fadeAnims.play("fadeIn")
 			$cutsceneAnimator.play(cutscenesToPlay[currentScene])
 		else:
-			var scene:PackedScene = load("res://scenes/game.tscn")
+			var scene:PackedScene = load("res://scenes/LEVEL_ONE.tscn")
 			get_tree().change_scene_to_packed(scene)
 
 func cutsceneFinish(animName:StringName)->void:
