@@ -1,21 +1,3 @@
-[gd_scene load_steps=2 format=3 uid="uid://by81ywck42ljo"]
-
-[ext_resource type="Texture2D" uid="uid://dk604sliqkt3h" path="res://textures/placeholder title.png" id="1_7nrmo"]
+[gd_scene format=3 uid="uid://by81ywck42ljo"]
 
 [node name="mainMenu" type="Node2D"]
-
-[node name="interactibles" type="CanvasLayer" parent="."]
-layer = -1
-
-[node name="ColorRect" type="ColorRect" parent="interactibles"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="title" type="Sprite2D" parent="."]
-position = Vector2(609, 154.00003)
-scale = Vector2(0.69727594, 0.71100014)
-texture = ExtResource("1_7nrmo")
