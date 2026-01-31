@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://be2kheqwscbe7"]
+[gd_scene load_steps=8 format=3 uid="uid://t6mkmfts5mkc"]
 
 [ext_resource type="PackedScene" uid="uid://bg2xj8ql16rcl" path="res://scenes/platform.tscn" id="1_18u1n"]
 [ext_resource type="PackedScene" uid="uid://dwcyago5htpj6" path="res://scenes/player.tscn" id="2_1nicl"]
-[ext_resource type="PackedScene" uid="uid://bi0wsldo5wjfe" path="res://scenes/ghostBlock.tscn" id="3_1nicl"]
-[ext_resource type="PackedScene" uid="uid://j44k7oh6sffr" path="res://scenes/un_ghost block.tscn" id="4_5uefb"]
-[ext_resource type="PackedScene" uid="uid://s2yr7eg288ip" path="res://scenes/cameraController.tscn" id="5_5uefb"]
+[ext_resource type="PackedScene" path="res://scenes/ghostBlock.tscn" id="3_1nicl"]
+[ext_resource type="PackedScene" uid="uid://cms0c2bepwlcw" path="res://scenes/kill_zone.tscn" id="3_m5ccw"]
+[ext_resource type="PackedScene" path="res://scenes/un_ghost block.tscn" id="4_5uefb"]
+[ext_resource type="PackedScene" uid="uid://s2yr7eg288ip" path="res://scenes/topCameraController.tscn" id="5_5uefb"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t8vnw"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -17,8 +20,8 @@ position = Vector2(325, -13)
 rotation = 1.5707964
 scale = Vector2(5, 5)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_1nicl")]
-position = Vector2(162, -47.000015)
+[node name="player" parent="." instance=ExtResource("2_1nicl")]
+position = Vector2(-212, 137)
 scale = Vector2(1, 0.99270076)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("4_5uefb")]
@@ -34,15 +37,24 @@ position = Vector2(151, 68)
 position = Vector2(249, 37)
 
 [node name="StaticBody2D6" parent="." instance=ExtResource("4_5uefb")]
-position = Vector2(163, -21)
+position = Vector2(169, -38)
 
 [node name="StaticBody2D7" parent="." instance=ExtResource("4_5uefb")]
-position = Vector2(65, -71)
+position = Vector2(82, -48)
+
+[node name="StaticBody2D10" parent="." instance=ExtResource("4_5uefb")]
+position = Vector2(-3, -63)
 
 [node name="StaticBody2D8" parent="." instance=ExtResource("3_1nicl")]
-position = Vector2(-29, 152)
+position = Vector2(5, 153)
+scale = Vector2(1.8000008, 0.88)
 
-[node name="StaticBody2D10" parent="." instance=ExtResource("3_1nicl")]
-position = Vector2(1, -105)
+[node name="killZone" parent="." instance=ExtResource("3_m5ccw")]
+position = Vector2(-435, 36)
+scale = Vector2(0.99691594, 1.1519278)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killZone"]
+position = Vector2(406, 120)
+shape = SubResource("WorldBoundaryShape2D_t8vnw")
 
 [node name="Controller" parent="." instance=ExtResource("5_5uefb")]
