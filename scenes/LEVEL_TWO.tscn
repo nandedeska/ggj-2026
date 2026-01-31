@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bg2xj8ql16rcl" path="res://scenes/platform.tscn" id="1_hte5k"]
 [ext_resource type="PackedScene" uid="uid://dwcyago5htpj6" path="res://scenes/player.tscn" id="2_ikxgj"]
-[ext_resource type="PackedScene" path="res://scenes/un_ghost block.tscn" id="3_cttd2"]
-[ext_resource type="PackedScene" path="res://scenes/ghostBlock.tscn" id="4_orvuk"]
+[ext_resource type="PackedScene" uid="uid://j44k7oh6sffr" path="res://scenes/un_ghost block.tscn" id="3_cttd2"]
+[ext_resource type="PackedScene" uid="uid://bi0wsldo5wjfe" path="res://scenes/ghostBlock.tscn" id="4_orvuk"]
 [ext_resource type="PackedScene" uid="uid://cms0c2bepwlcw" path="res://scenes/kill_zone.tscn" id="5_psf2f"]
 [ext_resource type="PackedScene" uid="uid://cd4e0u552mlvc" path="res://scenes/box.tscn" id="7_ikxgj"]
 [ext_resource type="PackedScene" uid="uid://dlrcubyntpx74" path="res://scenes/topBreakableBlock.tscn" id="8_cttd2"]
@@ -88,7 +88,7 @@ collision_layer = 3
 position = Vector2(-435, 36)
 scale = Vector2(0.99691594, 1.1519278)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killZone"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="killZone"]
 position = Vector2(406.2529, 119.79917)
 shape = SubResource("WorldBoundaryShape2D_cdsyk")
 
