@@ -8,34 +8,38 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="StaticBody2D" parent="." instance=ExtResource("1_18u1n")]
-position = Vector2(-506, 185)
+position = Vector2(-349.00003, 177.00002)
 scale = Vector2(5, 5)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("1_18u1n")]
-position = Vector2(297, -152)
+position = Vector2(325, -13)
 rotation = 1.5707964
 scale = Vector2(5, 5)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_1nicl")]
 position = Vector2(-247, -191)
+scale = Vector2(1, 0.99270076)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.275, 2.275)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("4_5uefb")]
-position = Vector2(-108, 106)
+position = Vector2(-80, 108)
 
 [node name="StaticBody2D4" parent="." instance=ExtResource("4_5uefb")]
-position = Vector2(43, 73)
+position = Vector2(43, 94)
 
 [node name="StaticBody2D5" parent="." instance=ExtResource("4_5uefb")]
-position = Vector2(161, 50)
+position = Vector2(151, 68)
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("4_5uefb")]
+position = Vector2(249, 37)
 
 [node name="StaticBody2D6" parent="." instance=ExtResource("4_5uefb")]
-position = Vector2(109, -19)
+position = Vector2(163, -21)
 
 [node name="StaticBody2D7" parent="." instance=ExtResource("4_5uefb")]
-position = Vector2(52, -56)
+position = Vector2(65, -71)
 
 [node name="StaticBody2D8" parent="." instance=ExtResource("3_1nicl")]
 position = Vector2(-29, 152)
