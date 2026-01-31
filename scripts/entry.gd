@@ -1,15 +1,14 @@
-extends Node2D
+extends Control
 
 const menu:PackedScene = preload("res://scenes/mainMenu.tscn")
 
 # Starts up the timer
 func _ready() -> void:
-	$Timer.connect("timeout",startScreen)
-	$AnimationPlayer.connect("animation_finished",finishedAnim)
+	$Timer.connect("timeout",playStart)
+	$logoPlayer.connect("animation_finished",finishedAnim)
 
-func startScreen()->void:
-	$AnimationPlayer.play("bounceIn")
+func playStart()->void:
+	$logoPlayer.play("playLogo")
 
 func finishedAnim(animName:StringName)->void:
-	if animName == "bounceIn":
-		get_tree().change_scene_to_packed(menu)
+	get_tree().change_scene_to_packed(menu)
