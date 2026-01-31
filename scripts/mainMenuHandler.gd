@@ -2,19 +2,24 @@ extends Node2D
 
 # Fades screen out and plays constant menu movement
 func _ready() -> void:
-	$fade/fadeController.connect("animation_finished",fadeFinish)
-	$fade/fadeController.play("fadeOut")
-	$menuAnims.play("menuMovement")
+	$transitionHandler.connect("animation_finished",startMenu)
+	$transitionHandler.play("masking")
 
-# Once fade is finished, initialize buttons
-func fadeFinish(animName:StringName)->void:
-	$fade.visible = false
-	$playButton.connect("pressed",playCutscene)
-	$creditsButton.connect("pressed",creditsScreen)
+func startMenu(animName:StringName)->void:
+	if animName == "masking":
+		$actualUI/play.connect("pressed",playGame)
+		$actualUI/credits.connect("pressed",showCredits)
 
-func playCutscene()->void:
+func playGame()->void:
 	var scene:PackedScene = load("res://scenes/openingCutscene.tscn")
 	get_tree().change_scene_to_packed(scene)
 
-func creditsScreen()->void:
-	print('hey')
+func showCredits()->void:
+	print("----------")
+	print("Magus Bautista - Programmer")
+	print("Miguel Visqueraz - Programmer")
+	print("Prinz Lim - Programmer")
+	print("Samuel Arboleda - Programmer")
+	print("Mira Paglinawan - Artist")
+	print("Robyn Ballon - Artist")
+	print("----------")
