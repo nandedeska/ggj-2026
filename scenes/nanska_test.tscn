@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c847t7wh68jr5"]
+[gd_scene load_steps=10 format=3 uid="uid://c847t7wh68jr5"]
 
 [ext_resource type="PackedScene" uid="uid://dwcyago5htpj6" path="res://scenes/player.tscn" id="1_6jqak"]
 [ext_resource type="PackedScene" uid="uid://bg2xj8ql16rcl" path="res://scenes/platform.tscn" id="2_smmcs"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cms0c2bepwlcw" path="res://scenes/kill_zone.tscn" id="5_ya4pc"]
 [ext_resource type="PackedScene" uid="uid://bi0wsldo5wjfe" path="res://scenes/ghostBlock.tscn" id="6_bahwk"]
 [ext_resource type="PackedScene" uid="uid://s2yr7eg288ip" path="res://scenes/cameraController.tscn" id="7_677oy"]
+[ext_resource type="PackedScene" uid="uid://0k0stv1crgmg" path="res://scenes/ghost.tscn" id="8_smmcs"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_80nbo"]
 
@@ -51,3 +52,8 @@ shape = SubResource("WorldBoundaryShape2D_80nbo")
 position = Vector2(-113, -9)
 
 [node name="Controller" parent="." instance=ExtResource("7_677oy")]
+
+[node name="Ghost" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_smmcs")]
+position = Vector2(336, -7)
+speed = 60
+player = NodePath("../player")
