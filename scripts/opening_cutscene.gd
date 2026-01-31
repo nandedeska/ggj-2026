@@ -18,12 +18,13 @@ func playCutscenes()->void:
 
 func fadeFinish(animName:StringName)->void:
 	if animName == "fadeOut":
-		currentScene += 1
-		$fade/fadeAnims.play("fadeIn")
-		$cutsceneAnimator.play(cutscenesToPlay[currentScene])
+		if currentScene != (cutscenesToPlay.size()-1):
+			currentScene += 1
+			$fade/fadeAnims.play("fadeIn")
+			$cutsceneAnimator.play(cutscenesToPlay[currentScene])
+		else:
+			var scene:PackedScene = load("res://scenes/game.tscn")
+			get_tree().change_scene_to_packed(scene)
 
 func cutsceneFinish(animName:StringName)->void:
-	if animName != "cutscene3":
-		$fade/fadeAnims.play("fadeOut")
-	else:
-		print("enter game")
+	$fade/fadeAnims.play("fadeOut")
