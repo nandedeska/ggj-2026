@@ -71,13 +71,8 @@ func _physics_process(delta: float) -> void:
 		floor_contact_cayote = FLOOR_CONTACT_CAYOTE_TIME
 	
 	move_and_slide()
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Rigidbody"):
-		body.collision_layer = 1
-		body.collision_mask = 1
-
-func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body.is_in_group("Rigidbody"):
-		body.collision_layer = 2
-		body.collision_mask = 2
+	
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		if c.get_collider() is RigidBody2D:
+			c.get_collider().apply_central_impulse(-c.get_normal() * 15)
