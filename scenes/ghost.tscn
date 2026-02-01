@@ -11,11 +11,13 @@ size = Vector2(16, 40)
 script = ExtResource("1_l5lq6")
 sprite = NodePath("Sprite2D")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -30)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_t76o2")
+
 [node name="killZone" parent="." instance=ExtResource("2_bbnym")]
+position = Vector2(0, -30)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="killZone"]
 shape = SubResource("RectangleShape2D_bbnym")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("1_t76o2")

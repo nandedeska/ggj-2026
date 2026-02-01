@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dwcyago5htpj6"]
+[gd_scene load_steps=25 format=3 uid="uid://dwcyago5htpj6"]
 
 [ext_resource type="Script" uid="uid://c3ubxpp10k6x6" path="res://scripts/player.gd" id="1_pjt0s"]
 [ext_resource type="Texture2D" uid="uid://d23ds10xro77q" path="res://graphics/sprites/idle0000.png" id="2_i4ail"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://dtb8082ovd8yj" path="res://graphics/sprites/idle0017.png" id="19_t4otl"]
 [ext_resource type="Texture2D" uid="uid://dip7g03yywott" path="res://graphics/sprites/idle0018.png" id="20_j2b1d"]
 [ext_resource type="Texture2D" uid="uid://bmory7xg4tujp" path="res://graphics/sprites/idle0019.png" id="21_cs1tg"]
+[ext_resource type="Texture2D" uid="uid://b4uqcmxu2fe2t" path="res://graphics/sprites/mask sprite.png" id="22_a38lo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j5wjh"]
 animations = [{
@@ -120,3 +121,10 @@ frame_progress = 0.21099316
 position = Vector2(1, -17)
 scale = Vector2(0.5999993, 1)
 shape = SubResource("CircleShape2D_80nbo")
+
+[node name="Mask" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1.35, -21.5)
+rotation = -0.034906585
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("22_a38lo")
