@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dwcyago5htpj6"]
+[gd_scene load_steps=50 format=3 uid="uid://dwcyago5htpj6"]
 
 [ext_resource type="Script" uid="uid://c3ubxpp10k6x6" path="res://scripts/player.gd" id="1_pjt0s"]
 [ext_resource type="Texture2D" uid="uid://d23ds10xro77q" path="res://graphics/sprites/idle0000.png" id="2_i4ail"]
@@ -46,6 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://bvop3y7i5pn1v" path="res://graphics/sprites/frame0020.png" id="42_51ujp"]
 [ext_resource type="Texture2D" uid="uid://vvf0n1s70w70" path="res://graphics/sprites/frame0021.png" id="43_tk41t"]
 [ext_resource type="Texture2D" uid="uid://bn6xdvocar2ye" path="res://graphics/sprites/wall jump 1.png" id="45_holxr"]
+[ext_resource type="Texture2D" uid="uid://b4uqcmxu2fe2t" path="res://graphics/sprites/mask sprite.png" id="46_mx1m4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j5wjh"]
 animations = [{
@@ -217,16 +218,17 @@ scale = Vector2(0.03571119, 0.034659605)
 sprite_frames = SubResource("SpriteFrames_j5wjh")
 animation = &"run"
 
+[node name="Mask" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1.35, -21.5)
+rotation = -0.03490658
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("46_mx1m4")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -17)
 scale = Vector2(0.5999993, 1)
 shape = SubResource("CircleShape2D_80nbo")
-
-[node name="Mask" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1.35, -21.5)
-rotation = -0.034906585
-scale = Vector2(0.03, 0.03)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(1, -17)

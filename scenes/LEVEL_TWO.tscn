@@ -42,6 +42,7 @@ collision_layer = 3
 [node name="player" parent="." instance=ExtResource("2_ikxgj")]
 position = Vector2(-16, 153)
 scale = Vector2(1, 0.99270076)
+has_mask = true
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("3_cttd2")]
 position = Vector2(4, 153)

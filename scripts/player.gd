@@ -51,8 +51,10 @@ func _physics_process(delta: float) -> void:
 	
 	if direction > 0:
 		animated_sprite_2d.flip_h = false
+		mask.flip_h = false
 	elif direction < 0:
 		animated_sprite_2d.flip_h = true
+		mask.flip_h = true
 	
 	if is_on_floor():
 		if direction == 0:
