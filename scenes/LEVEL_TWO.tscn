@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://ddx7e3pqpqbpo"]
+[gd_scene load_steps=13 format=3 uid="uid://ddx7e3pqpqbpo"]
 
 [ext_resource type="PackedScene" uid="uid://bg2xj8ql16rcl" path="res://scenes/platform.tscn" id="1_hte5k"]
+[ext_resource type="Script" uid="uid://bk6yphka4m4ac" path="res://scenes/level_two.gd" id="1_oqrbh"]
 [ext_resource type="PackedScene" uid="uid://dwcyago5htpj6" path="res://scenes/player.tscn" id="2_ikxgj"]
 [ext_resource type="PackedScene" uid="uid://j44k7oh6sffr" path="res://scenes/un_ghost block.tscn" id="3_cttd2"]
 [ext_resource type="PackedScene" uid="uid://bi0wsldo5wjfe" path="res://scenes/ghostBlock.tscn" id="4_orvuk"]
 [ext_resource type="PackedScene" uid="uid://cms0c2bepwlcw" path="res://scenes/kill_zone.tscn" id="5_psf2f"]
+[ext_resource type="Script" uid="uid://r5wa1sj6kpr1" path="res://scripts/ghost_block.gd" id="6_cdsyk"]
 [ext_resource type="PackedScene" uid="uid://cd4e0u552mlvc" path="res://scenes/box.tscn" id="7_ikxgj"]
 [ext_resource type="PackedScene" uid="uid://dlrcubyntpx74" path="res://scenes/topBreakableBlock.tscn" id="8_cttd2"]
 [ext_resource type="PackedScene" uid="uid://dya6kv7tdgi4i" path="res://scenes/sideCameraController.tscn" id="8_orvuk"]
@@ -13,6 +15,7 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cdsyk"]
 
 [node name="levelTwo" type="Node2D"]
+script = ExtResource("1_oqrbh")
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("1_hte5k")]
 position = Vector2(326, -144)
@@ -65,25 +68,34 @@ collision_layer = 3
 position = Vector2(121, -1)
 collision_layer = 3
 
-[node name="StaticBody2D8" parent="." instance=ExtResource("4_orvuk")]
+[node name="StaticBody2D8" parent="." node_paths=PackedStringArray("collider", "sprite") instance=ExtResource("4_orvuk")]
 position = Vector2(5, 153)
 scale = Vector2(1.8000008, 0.88)
 collision_layer = 3
+script = ExtResource("6_cdsyk")
+collider = NodePath("CollisionShape2D")
+sprite = NodePath("Sprite2D")
 
 [node name="StaticBody2D10" parent="." instance=ExtResource("3_cttd2")]
 position = Vector2(235, 188)
 scale = Vector2(2.3406403, 0.2021305)
 collision_layer = 3
 
-[node name="StaticBody2D14" parent="." instance=ExtResource("4_orvuk")]
+[node name="StaticBody2D14" parent="." node_paths=PackedStringArray("collider", "sprite") instance=ExtResource("4_orvuk")]
 position = Vector2(235.99997, 187)
 scale = Vector2(2.449508, 0.2021305)
 collision_layer = 3
+script = ExtResource("6_cdsyk")
+collider = NodePath("CollisionShape2D")
+sprite = NodePath("Sprite2D")
 
-[node name="StaticBody2D13" parent="." instance=ExtResource("4_orvuk")]
+[node name="StaticBody2D13" parent="." node_paths=PackedStringArray("collider", "sprite") instance=ExtResource("4_orvuk")]
 position = Vector2(-184, 98)
 scale = Vector2(0.7255801, 1.022438)
 collision_layer = 3
+script = ExtResource("6_cdsyk")
+collider = NodePath("CollisionShape2D")
+sprite = NodePath("Sprite2D")
 
 [node name="killZone" parent="." instance=ExtResource("5_psf2f")]
 position = Vector2(-19, 177)
