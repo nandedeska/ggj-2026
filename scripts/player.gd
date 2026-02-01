@@ -22,12 +22,13 @@ const WALL_JUMP_LOCK_TIME: float = 0.275
 
 var look_dir_x: int =  1
 
-@onready var animation: AnimatedSprite2D = $Animation
+@onready var mask := $Mask
 
 var has_mask := false
 var is_wearing_mask :
 	set(value):
 		is_wearing_mask = value
+		mask.visible = is_wearing_mask
 		on_mask_wear.emit(is_wearing_mask)
 	get:
 		return is_wearing_mask
