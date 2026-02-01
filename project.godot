@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="ggj2026"
-run/main_scene="uid://ddx7e3pqpqbpo"
+run/main_scene="uid://t6mkmfts5mkc"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://graphics/icon.svg"
 
@@ -68,4 +68,5 @@ skip={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"

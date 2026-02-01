@@ -23,7 +23,7 @@ const WALL_JUMP_LOCK_TIME: float = 0.3
 var look_dir_x: int =  1
 
 @onready var mask := $Mask
-@onready var animation: AnimatedSprite2D = $Animation
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var has_mask := false
@@ -47,6 +47,22 @@ func _physics_process(delta: float) -> void:
 	var x_input: float = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	var velocity_weight_x: float = 1 - exp( - ( ACCELERATION if x_input else FRICTION ) * delta)
 	
+	var direction = Input.get_axis("move_left","move_right")
+	
+	if direction > 0:
+		animated_sprite_2d.flip_h = false
+	elif direction < 0:
+		animated_sprite_2d.flip_h = true
+	
+	if is_on_floor():
+		if direction == 0:
+			animated_sprite_2d.play("idle")
+		if direction != 0:
+			animated_sprite_2d.play("run")
+	if not is_on_floor() and velocity.y < 0:
+		animated_sprite_2d.play("jump")
+		
+	
 	if wall_jump_lock > 0.0:
 		wall_jump_lock -= delta
 		velocity.x = lerp(velocity.x, x_input * SPEED, velocity_weight_x * 0.2)
@@ -65,6 +81,7 @@ func _physics_process(delta: float) -> void:
 				wall_jump_lock = WALL_JUMP_LOCK_TIME
 	
 	if !is_on_floor() and velocity.y > 0 and is_on_wall() and velocity.x !=0:
+		animated_sprite_2d.play("wallJump")
 		look_dir_x = sign(velocity.x)
 		wall_contact_cayote = WALL_CONTACT_CAYOTE_TIME
 		velocity.y = GRAVITY_WALL
