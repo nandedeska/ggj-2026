@@ -34,7 +34,7 @@ var is_wearing_mask :
 		return is_wearing_mask
 
 
-func _ready() -> void:
+func _init() -> void:
 	Global.player = self
 
 func _input(event) -> void:
