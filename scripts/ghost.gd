@@ -1,12 +1,13 @@
 extends CharacterBody2D
 
 @export var speed := 75
-@export var sprite: Sprite2D
+@export var sprite: AnimatedSprite2D
 var is_active: bool
 
 func _ready() -> void:
 	Global.player.on_mask_wear.connect(on_player_mask_wear)
 	set_physics_process(false)
+	
 	sprite.visible = false
 
 func _physics_process(delta: float) -> void:
