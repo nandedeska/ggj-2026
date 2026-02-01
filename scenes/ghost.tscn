@@ -102,10 +102,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbnym"]
-size = Vector2(16, 40)
+size = Vector2(9, 19)
 
 [node name="Ghost" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_l5lq6")
+speed = null
 sprite = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -120,4 +121,5 @@ frame_progress = 0.8766137
 position = Vector2(0, -30)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="killZone"]
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_bbnym")

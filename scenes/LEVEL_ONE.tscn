@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://s2yr7eg288ip" path="res://scenes/topCameraController.tscn" id="5_5uefb"]
 [ext_resource type="PackedScene" uid="uid://260fgrxq5ugp" path="res://scenes/mask.tscn" id="7_t8vnw"]
 [ext_resource type="PackedScene" uid="uid://0k0stv1crgmg" path="res://scenes/ghost.tscn" id="8_yjjs3"]
-[ext_resource type="PackedScene" path="res://scenes/new_ghostBlock.tscn" id="9_1vif4"]
+[ext_resource type="PackedScene" uid="uid://nrtpyo0ajk2e" path="res://scenes/new_ghostBlock.tscn" id="9_1vif4"]
 [ext_resource type="PackedScene" uid="uid://duubc7rvvlfx6" path="res://scenes/caveSound.tscn" id="9_3uirk"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t8vnw"]
@@ -63,7 +63,7 @@ shape = SubResource("WorldBoundaryShape2D_t8vnw")
 position = Vector2(-20, -89)
 
 [node name="Ghost" parent="." instance=ExtResource("8_yjjs3")]
-position = Vector2(-371, 26)
+position = Vector2(324, 105)
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("9_3uirk")]
 

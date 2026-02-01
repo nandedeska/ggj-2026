@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ddx7e3pqpqbpo"]
+[gd_scene load_steps=12 format=3 uid="uid://ddx7e3pqpqbpo"]
 
 [ext_resource type="PackedScene" uid="uid://bg2xj8ql16rcl" path="res://scenes/platform.tscn" id="1_hte5k"]
 [ext_resource type="PackedScene" uid="uid://dwcyago5htpj6" path="res://scenes/player.tscn" id="2_ikxgj"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dlrcubyntpx74" path="res://scenes/topBreakableBlock.tscn" id="8_cttd2"]
 [ext_resource type="PackedScene" uid="uid://dya6kv7tdgi4i" path="res://scenes/sideCameraController.tscn" id="8_orvuk"]
 [ext_resource type="PackedScene" uid="uid://duubc7rvvlfx6" path="res://scenes/caveSound.tscn" id="9_orvuk"]
+[ext_resource type="PackedScene" uid="uid://0k0stv1crgmg" path="res://scenes/ghost.tscn" id="10_psf2f"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cdsyk"]
 
@@ -106,3 +107,6 @@ scale = Vector2(1.3200005, 1.2533765)
 [node name="Controller" parent="." instance=ExtResource("8_orvuk")]
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("9_orvuk")]
+
+[node name="Ghost" parent="." instance=ExtResource("10_psf2f")]
+position = Vector2(-279, 258)
