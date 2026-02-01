@@ -12,4 +12,4 @@ func _ready() -> void: #default state of ghost block here is active (mask is on)
 
 func on_player_mask_wear(is_wearing_mask: bool) -> void:
 	collider.set_deferred("disabled", is_wearing_mask)
-	sprite.set_deferred("modulate", "white" if !is_wearing_mask else "blue")
+	sprite.set_deferred("modulate", "white" if !is_wearing_mask else Color8(255, 255, 255, 0))
