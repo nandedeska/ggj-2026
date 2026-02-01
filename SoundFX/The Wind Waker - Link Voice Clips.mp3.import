@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bhje5r0b7l7sn"
+path="res://.godot/imported/The Wind Waker - Link Voice Clips.mp3-4f6e84ba5bdcf1894fd6e20bced0c384.mp3str"
+
+[deps]
+
+source_file="res://SoundFX/The Wind Waker - Link Voice Clips.mp3"
+dest_files=["res://.godot/imported/The Wind Waker - Link Voice Clips.mp3-4f6e84ba5bdcf1894fd6e20bced0c384.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
