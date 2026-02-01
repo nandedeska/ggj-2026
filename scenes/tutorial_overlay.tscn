@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://mfikqcsgh4jl"]
+
+[ext_resource type="FontFile" path="res://fonts/architect-s-daughter/ArchitectsDaughter32.tres" id="1_3d8bu"]
+[ext_resource type="Script" uid="uid://bkm1yjo3nat1y" path="res://scripts/tutorial_overlay.gd" id="1_cuu4x"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cuu4x"]
+font = ExtResource("1_3d8bu")
+font_size = 32
+
+[node name="Tutorial Overlay" type="CanvasLayer" node_paths=PackedStringArray("label")]
+script = ExtResource("1_cuu4x")
+label = NodePath("Control/Label")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.5
+offset_top = 50.0
+offset_right = 272.5
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press F or K to toggle mask"
+label_settings = SubResource("LabelSettings_cuu4x")
+horizontal_alignment = 1
+vertical_alignment = 1
