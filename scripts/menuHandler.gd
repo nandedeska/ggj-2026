@@ -11,4 +11,4 @@ func playCutscene()->void:
 	get_tree().change_scene_to_packed(scene)
 
 func openCredits()->void:
-	print("Credits here")
+	$mainTitle/AnimationPlayer.play("scroll")
