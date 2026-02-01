@@ -11,7 +11,7 @@ func _ready() -> void:
 		"levelTwo":
 			nextLevel = "res://scenes/LEVEL_THREE.tscn"
 		"LevelThree":
-			nextLevel = "res://scenes/LEVEL_ONE.tscn"
+			nextLevel = "res://scenes/end_scene.tscn"
 	print(currentLevel)
 	print(nextLevel)
 	
