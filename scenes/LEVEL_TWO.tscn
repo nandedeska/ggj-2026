@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://ddx7e3pqpqbpo"]
+[gd_scene load_steps=13 format=3 uid="uid://ddx7e3pqpqbpo"]
 
 [ext_resource type="PackedScene" uid="uid://bg2xj8ql16rcl" path="res://scenes/platform.tscn" id="1_hte5k"]
+[ext_resource type="Texture2D" uid="uid://rlb68d8ichao" path="res://graphics/bg type xi.png" id="1_oqrbh"]
 [ext_resource type="PackedScene" uid="uid://dwcyago5htpj6" path="res://scenes/player.tscn" id="2_ikxgj"]
 [ext_resource type="PackedScene" uid="uid://j44k7oh6sffr" path="res://scenes/un_ghost block.tscn" id="3_cttd2"]
 [ext_resource type="PackedScene" uid="uid://bi0wsldo5wjfe" path="res://scenes/ghostBlock.tscn" id="4_orvuk"]
@@ -14,6 +15,10 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cdsyk"]
 
 [node name="levelTwo" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_oqrbh")
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("1_hte5k")]
 position = Vector2(326, -144)
@@ -111,3 +116,4 @@ scale = Vector2(1.3200005, 1.2533765)
 
 [node name="Ghost" parent="." instance=ExtResource("10_psf2f")]
 position = Vector2(-279, 258)
+speed = 75

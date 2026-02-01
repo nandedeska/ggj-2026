@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://j44k7oh6sffr"]
 
 [ext_resource type="Script" uid="uid://bg4q1s1bd3w7f" path="res://scenes/un_ghost_block.gd" id="1_8uklr"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://graphics/icon.svg" id="2_i16hv"]
+[ext_resource type="Texture2D" uid="uid://cxhiqvdc7kijk" path="res://graphics/short.png" id="2_8uklr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udy4n"]
 size = Vector2(79, 20)
@@ -12,8 +12,9 @@ collider = NodePath("CollisionShape2D")
 sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.625, 0.15625001)
-texture = ExtResource("2_i16hv")
+position = Vector2(-0.5000019, -4.21875)
+scale = Vector2(0.9875, 0.578125)
+texture = ExtResource("2_8uklr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_udy4n")
