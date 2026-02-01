@@ -8,14 +8,14 @@ const ACCELERATION = 22
 const FRICTION = 20
 
 var floor_contact_cayote: float = 0.0
-const FLOOR_CONTACT_CAYOTE_TIME: float = 0.1
+const FLOOR_CONTACT_CAYOTE_TIME: float = 0.025
 
 const GRAVITY_NORMAL:= 14
 const GRAVITY_WALL: float = 12
 const WALL_JUMP_PUSH_FORCE: float = 275.0
  
 var wall_contact_cayote: float = 0.0
-const WALL_CONTACT_CAYOTE_TIME: float = 0.1
+const WALL_CONTACT_CAYOTE_TIME: float = 0.025
 
 var wall_jump_lock: float = 0.0
 const WALL_JUMP_LOCK_TIME: float = 0.3

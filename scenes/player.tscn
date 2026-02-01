@@ -235,4 +235,3 @@ position = Vector2(1, -17)
 scale = Vector2(0.5999993, 1)
 stream = ExtResource("22_a38lo")
 volume_db = -17.25
-autoplay = true

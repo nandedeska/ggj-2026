@@ -82,11 +82,6 @@ position = Vector2(235.99997, 187)
 scale = Vector2(2.449508, 0.2021305)
 collision_layer = 3
 
-[node name="StaticBody2D13" parent="." instance=ExtResource("4_orvuk")]
-position = Vector2(-184, 98)
-scale = Vector2(0.7255801, 1.022438)
-collision_layer = 3
-
 [node name="killZone" parent="." instance=ExtResource("5_psf2f")]
 position = Vector2(-19, 177)
 scale = Vector2(0.99691594, 1.1519278)
@@ -111,3 +106,6 @@ scale = Vector2(1.3200005, 1.2533765)
 
 [node name="Ghost" parent="." instance=ExtResource("10_psf2f")]
 position = Vector2(-279, 258)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("4_orvuk")]
+position = Vector2(-198, 100)
