@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://bg2xj8ql16rcl" path="res://scenes/platform.tscn" id="1_18u1n"]
 [ext_resource type="PackedScene" uid="uid://dwcyago5htpj6" path="res://scenes/player.tscn" id="2_1nicl"]
-[ext_resource type="PackedScene" uid="uid://bi0wsldo5wjfe" path="res://scenes/ghostBlock.tscn" id="3_1nicl"]
 [ext_resource type="PackedScene" uid="uid://cms0c2bepwlcw" path="res://scenes/kill_zone.tscn" id="3_m5ccw"]
 [ext_resource type="PackedScene" uid="uid://j44k7oh6sffr" path="res://scenes/un_ghost block.tscn" id="4_5uefb"]
 [ext_resource type="PackedScene" uid="uid://s2yr7eg288ip" path="res://scenes/topCameraController.tscn" id="5_5uefb"]
 [ext_resource type="PackedScene" uid="uid://260fgrxq5ugp" path="res://scenes/mask.tscn" id="7_t8vnw"]
 [ext_resource type="PackedScene" uid="uid://0k0stv1crgmg" path="res://scenes/ghost.tscn" id="8_yjjs3"]
+[ext_resource type="PackedScene" uid="uid://nrtpyo0ajk2e" path="res://scenes/new_ghostBlock.tscn" id="9_1vif4"]
 [ext_resource type="PackedScene" uid="uid://duubc7rvvlfx6" path="res://scenes/caveSound.tscn" id="9_3uirk"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t8vnw"]
@@ -49,10 +49,6 @@ position = Vector2(82, -48)
 [node name="StaticBody2D10" parent="." instance=ExtResource("4_5uefb")]
 position = Vector2(-3, -63)
 
-[node name="StaticBody2D8" parent="." instance=ExtResource("3_1nicl")]
-position = Vector2(5, 153)
-scale = Vector2(1.8000008, 0.88)
-
 [node name="killZone" parent="." instance=ExtResource("3_m5ccw")]
 position = Vector2(15, 198.99998)
 scale = Vector2(0.99691594, 1.1519278)
@@ -70,4 +66,5 @@ position = Vector2(-20, -89)
 position = Vector2(-371, 26)
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("9_3uirk")]
-autoplay = true
+
+[node name="AnimatableBody2D" parent="." instance=ExtResource("9_1vif4")]
