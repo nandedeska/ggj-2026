@@ -63,7 +63,8 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.play("run")
 	if not is_on_floor() and velocity.y < 0:
 		animated_sprite_2d.play("jump")
-		
+		if Input.is_action_just_released("jump") and velocity.y < 0:
+			velocity.y = JUMP_VELOCITY/2.0
 	
 	if wall_jump_lock > 0.0:
 		wall_jump_lock -= delta
@@ -72,9 +73,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = lerp(velocity.x, x_input * SPEED, velocity_weight_x)
 	
 	if is_on_floor() or wall_contact_cayote > 0.0 or floor_contact_cayote > 0.0:
-		if Input.is_action_just_released("jump") and velocity.y < 0:
-			velocity.y = JUMP_VELOCITY/2
-		
 		if Input.is_action_just_pressed("jump"):
 			audio_stream_player_2d.play()
 			velocity.y = JUMP_VELOCITY
