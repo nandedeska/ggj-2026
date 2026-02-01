@@ -105,7 +105,6 @@ scale = Vector2(1.3200005, 1.2533765)
 
 [node name="Ghost" parent="." instance=ExtResource("10_psf2f")]
 position = Vector2(-279, 258)
-speed = 75
 
 [node name="StaticBody2D6" parent="." instance=ExtResource("4_orvuk")]
-position = Vector2(-192, 95)
+position = Vector2(-198, 100)
