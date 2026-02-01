@@ -70,4 +70,3 @@ position = Vector2(-20, -89)
 position = Vector2(-371, 26)
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("9_3uirk")]
-autoplay = true
