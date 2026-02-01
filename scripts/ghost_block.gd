@@ -7,7 +7,7 @@ var maskOn: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void: #default state of ghost block here is active (mask is on) 
 	collider.disabled = true 
-	sprite.modulate = "white" #all instances of this code can be replaced with whatever indication that a ghost block hitbox is active
+	sprite.modulate = Color8(255, 255, 255, 0) #all instances of this code can be replaced with whatever indication that a ghost block hitbox is active
 	Global.player.on_mask_wear.connect(on_player_mask_wear)
 
 func on_player_mask_wear(is_wearing_mask: bool) -> void:
