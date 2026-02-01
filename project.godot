@@ -22,6 +22,7 @@ config/icon="res://graphics/icon.svg"
 [autoload]
 
 Global="*res://scripts/global.gd"
+Transitioner="*res://scenes/transitioner.tscn"
 
 [display]
 
