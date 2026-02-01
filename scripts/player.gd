@@ -26,7 +26,7 @@ var look_dir_x: int =  1
 @onready var animation: AnimatedSprite2D = $Animation
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
-var has_mask := false
+@export var has_mask := false
 var is_wearing_mask :
 	set(value):
 		is_wearing_mask = value
