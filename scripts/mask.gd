@@ -6,14 +6,14 @@ extends Area2D
 var time: float
 
 func _ready() -> void:
-	area_entered.connect(on_area_entered)
+	body_entered.connect(on_body_entered)
 
 func _process(delta: float) -> void:
 	time += delta
 	sprite.position.y = sin(time * oscillation_speed) * oscillation_power
 	
-func on_area_entered(area: Area2D) -> void:
-	if area.owner == Global.player:
+func on_body_entered(body: Node2D) -> void:
+	if body == Global.player:
 		Global.player.has_mask = true
 		Global.player.is_wearing_mask = true
 		call_deferred("queue_free")
