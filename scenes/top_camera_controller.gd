@@ -12,6 +12,10 @@ func _ready() -> void:
 			nextLevel = "res://scenes/LEVEL_THREE.tscn"
 		"LevelThree":
 			nextLevel = "res://scenes/LEVEL_ONE.tscn"
-			
+	print(currentLevel)
+	print(nextLevel)
+	
 func _on_path_follow_2d_next_level() -> void:
+	Transitioner.transition()
+	await Transitioner.on_transition_finished
 	get_tree().change_scene_to_file(nextLevel)
