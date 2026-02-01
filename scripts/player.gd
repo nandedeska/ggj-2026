@@ -23,6 +23,7 @@ const WALL_JUMP_LOCK_TIME: float = 0.275
 var look_dir_x: int =  1
 
 @onready var animation: AnimatedSprite2D = $Animation
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var has_mask := false
 var is_wearing_mask :
@@ -52,6 +53,7 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_floor() or wall_contact_cayote > 0.0 or floor_contact_cayote > 0.0:
 		if Input.is_action_just_pressed("jump"):
+			audio_stream_player_2d.play()
 			velocity.y = JUMP_VELOCITY
 			if wall_contact_cayote > 0.0:
 				velocity.x = -look_dir_x * WALL_JUMP_PUSH_FORCE
