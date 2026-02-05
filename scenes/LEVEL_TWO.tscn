@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://ddx7e3pqpqbpo"]
+[gd_scene load_steps=12 format=3 uid="uid://ddx7e3pqpqbpo"]
 
 [ext_resource type="PackedScene" uid="uid://bg2xj8ql16rcl" path="res://scenes/platform.tscn" id="1_hte5k"]
+[ext_resource type="Texture2D" uid="uid://btnobpdl67mph" path="res://scenes/bg type xi.png" id="1_psf2f"]
 [ext_resource type="PackedScene" uid="uid://dwcyago5htpj6" path="res://scenes/player.tscn" id="2_ikxgj"]
 [ext_resource type="PackedScene" uid="uid://j44k7oh6sffr" path="res://scenes/un_ghost block.tscn" id="3_cttd2"]
 [ext_resource type="PackedScene" uid="uid://bi0wsldo5wjfe" path="res://scenes/ghostBlock.tscn" id="4_orvuk"]
@@ -13,6 +14,13 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cdsyk"]
 
 [node name="levelTwo" type="Node2D"]
+
+[node name="BgTypeXi" type="Sprite2D" parent="."]
+position = Vector2(-0.5, 2.0000076)
+scale = Vector2(0.4464567, 0.44444442)
+texture = ExtResource("1_psf2f")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="BgTypeXi"]
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("1_hte5k")]
 position = Vector2(326, -144)
@@ -35,7 +43,7 @@ collision_layer = 3
 [node name="StaticBody2D12" parent="." instance=ExtResource("1_hte5k")]
 position = Vector2(-209, -26.000002)
 rotation = 1.5707964
-scale = Vector2(1.5391872, -0.072907686)
+scale = Vector2(1.5391872, 0.28708988)
 collision_layer = 3
 
 [node name="player" parent="." instance=ExtResource("2_ikxgj")]
@@ -82,7 +90,7 @@ scale = Vector2(2.449508, 0.2021305)
 collision_layer = 3
 
 [node name="killZone" parent="." instance=ExtResource("5_psf2f")]
-position = Vector2(-19, 177)
+position = Vector2(-22, 147)
 scale = Vector2(0.99691594, 1.1519278)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="killZone"]

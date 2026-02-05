@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dlrcubyntpx74"]
 
 [ext_resource type="Script" path="res://scripts/breakable_block.gd" id="1_6uj74"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://graphics/icon.svg" id="2_65uux"]
+[ext_resource type="Texture2D" uid="uid://b1bx2u7v6xffn" path="res://brokn.png" id="2_6uj74"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gc3pe"]
 
@@ -12,10 +12,9 @@ size = Vector2(1, 20.393484)
 script = ExtResource("1_6uj74")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0, 1, 0, 1)
-position = Vector2(-4, -10.999998)
-scale = Vector2(0.47111458, 0.12114761)
-texture = ExtResource("2_65uux")
+position = Vector2(-4.0000014, -11.5)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_6uj74")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, -11)

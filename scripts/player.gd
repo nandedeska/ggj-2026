@@ -64,7 +64,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor() and velocity.y < 0:
 		animated_sprite_2d.play("jump")
 		if Input.is_action_just_released("jump") and velocity.y < 0:
-			velocity.y = JUMP_VELOCITY/2.0
+			velocity.y = JUMP_VELOCITY/4.0
 	
 	if wall_jump_lock > 0.0:
 		wall_jump_lock -= delta

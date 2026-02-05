@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://t6mkmfts5mkc"]
+[gd_scene load_steps=12 format=3 uid="uid://t6mkmfts5mkc"]
 
+[ext_resource type="Texture2D" uid="uid://btnobpdl67mph" path="res://scenes/bg type xi.png" id="1_1vif4"]
 [ext_resource type="PackedScene" uid="uid://bg2xj8ql16rcl" path="res://scenes/platform.tscn" id="1_18u1n"]
 [ext_resource type="PackedScene" uid="uid://dwcyago5htpj6" path="res://scenes/player.tscn" id="2_1nicl"]
 [ext_resource type="PackedScene" uid="uid://cms0c2bepwlcw" path="res://scenes/kill_zone.tscn" id="3_m5ccw"]
@@ -14,6 +15,13 @@
 distance = 109.58267
 
 [node name="levelOne" type="Node2D"]
+
+[node name="BgTypeXi" type="Sprite2D" parent="."]
+position = Vector2(4, -1)
+scale = Vector2(0.4464567, 0.44444442)
+texture = ExtResource("1_1vif4")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="BgTypeXi"]
 
 [node name="StaticBody2D" parent="." instance=ExtResource("1_18u1n")]
 position = Vector2(-349.00003, 177.00002)
@@ -60,7 +68,8 @@ shape = SubResource("WorldBoundaryShape2D_t8vnw")
 [node name="Controller" parent="." instance=ExtResource("5_5uefb")]
 
 [node name="Mask" parent="." instance=ExtResource("7_t8vnw")]
-position = Vector2(-20, -89)
+position = Vector2(-4, -85)
+scale = Vector2(0.39690986, 0.36972132)
 
 [node name="Ghost" parent="." instance=ExtResource("8_yjjs3")]
 position = Vector2(324, 105)

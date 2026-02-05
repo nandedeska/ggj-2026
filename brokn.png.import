@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4pcemfl07mki"
-path="res://.godot/imported/frame0019.png-b187cdf63cf9e8d0b5f8c73150469c60.ctex"
+uid="uid://b1bx2u7v6xffn"
+path="res://.godot/imported/brokn.png-c88d1b18f995e3d437daa17054684591.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/frame0019.png"
-dest_files=["res://.godot/imported/frame0019.png-b187cdf63cf9e8d0b5f8c73150469c60.ctex"]
+source_file="res://brokn.png"
+dest_files=["res://.godot/imported/brokn.png-c88d1b18f995e3d437daa17054684591.ctex"]
 
 [params]
 

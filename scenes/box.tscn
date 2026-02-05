@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cd4e0u552mlvc"]
 
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://graphics/icon.svg" id="1_3inec"]
+[ext_resource type="Texture2D" uid="uid://dl6h2c3aob205" path="res://graphics/pushs.png" id="1_3inec"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3inec"]
 
@@ -11,9 +11,8 @@ lock_rotation = true
 linear_damp = 25.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 1, 1)
-position = Vector2(1.9073486e-06, -11.999999)
-scale = Vector2(0.36383337, 0.35986474)
+position = Vector2(-4.7683716e-07, -11.999998)
+scale = Vector2(0.9583334, 0.95833343)
 texture = ExtResource("1_3inec")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

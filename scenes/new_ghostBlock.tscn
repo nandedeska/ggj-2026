@@ -1,12 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://nrtpyo0ajk2e"]
 
 [ext_resource type="Script" uid="uid://r5wa1sj6kpr1" path="res://scripts/new_ghost_block.gd" id="1_2fhgf"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://graphics/icon.svg" id="1_dj4iy"]
+[ext_resource type="Texture2D" uid="uid://da8q56oc55511" path="res://graphics/medium.png" id="2_2fhgf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2fhgf"]
 size = Vector2(79, 20)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2fhgf"]
+radius = 17.029387
 
 [sub_resource type="Animation" id="Animation_nkjln"]
 length = 0.001
@@ -53,9 +54,9 @@ collider = NodePath("CollisionShape2D")
 sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -1.9073486e-06)
-scale = Vector2(0.625, 0.15625001)
-texture = ExtResource("1_dj4iy")
+position = Vector2(2.3841858e-06, -8.106232e-06)
+scale = Vector2(0.79999995, 0.9999995)
+texture = ExtResource("2_2fhgf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_2fhgf")
